@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115_CAMERA
-Tue Nov 29 09:19:26 2016
+Tue Nov 29 18:43:46 2016
 Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
 
 
@@ -117,15 +117,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 29 09:19:26 2016    ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 29 18:43:46 2016    ;
 ; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
 ; Revision Name                      ; DE2_115_CAMERA                           ;
 ; Top-level Entity Name              ; DE2_115_CAMERA                           ;
 ; Family                             ; Cyclone IV E                             ;
-; Total logic elements               ; 1,885                                    ;
-;     Total combinational functions  ; 1,498                                    ;
-;     Dedicated logic registers      ; 1,120                                    ;
-; Total registers                    ; 1120                                     ;
+; Total logic elements               ; 1,869                                    ;
+;     Total combinational functions  ; 1,482                                    ;
+;     Dedicated logic registers      ; 1,119                                    ;
+; Total registers                    ; 1119                                     ;
 ; Total pins                         ; 428                                      ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 62,416                                   ;
@@ -295,20 +295,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                  ;
 +---------------------------------------------+------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,885                                                                  ;
+; Estimated Total logic elements              ; 1,869                                                                  ;
 ;                                             ;                                                                        ;
-; Total combinational functions               ; 1498                                                                   ;
+; Total combinational functions               ; 1482                                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                                        ;
-;     -- 4 input functions                    ; 635                                                                    ;
-;     -- 3 input functions                    ; 290                                                                    ;
-;     -- <=2 input functions                  ; 573                                                                    ;
+;     -- 4 input functions                    ; 625                                                                    ;
+;     -- 3 input functions                    ; 282                                                                    ;
+;     -- <=2 input functions                  ; 575                                                                    ;
 ;                                             ;                                                                        ;
 ; Logic elements by mode                      ;                                                                        ;
-;     -- normal mode                          ; 1081                                                                   ;
-;     -- arithmetic mode                      ; 417                                                                    ;
+;     -- normal mode                          ; 1069                                                                   ;
+;     -- arithmetic mode                      ; 413                                                                    ;
 ;                                             ;                                                                        ;
-; Total registers                             ; 1120                                                                   ;
-;     -- Dedicated logic registers            ; 1120                                                                   ;
+; Total registers                             ; 1119                                                                   ;
+;     -- Dedicated logic registers            ; 1119                                                                   ;
 ;     -- I/O registers                        ; 0                                                                      ;
 ;                                             ;                                                                        ;
 ; I/O pins                                    ; 428                                                                    ;
@@ -318,8 +318,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                                                                        ;
 ; Maximum fan-out node                        ; sdram_pll:u6|altpll:altpll_component|altpll_f423:auto_generated|clk[0] ;
 ; Maximum fan-out                             ; 762                                                                    ;
-; Total fan-out                               ; 10925                                                                  ;
-; Average fan-out                             ; 2.98                                                                   ;
+; Total fan-out                               ; 10857                                                                  ;
+; Average fan-out                             ; 2.97                                                                   ;
 +---------------------------------------------+------------------------------------------------------------------------+
 
 
@@ -328,10 +328,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                        ; Library Name ;
 +--------------------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115_CAMERA                                              ; 1498 (1)          ; 1120 (14)    ; 62416       ; 0          ; 0            ; 0       ; 0         ; 428  ; 0            ; |DE2_115_CAMERA                                                                                                                                                                            ;              ;
+; |DE2_115_CAMERA                                              ; 1482 (1)          ; 1119 (14)    ; 62416       ; 0          ; 0            ; 0       ; 0         ; 428  ; 0            ; |DE2_115_CAMERA                                                                                                                                                                            ;              ;
 ;    |CCD_Capture:u3|                                          ; 81 (81)           ; 73 (73)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|CCD_Capture:u3                                                                                                                                                             ;              ;
 ;    |GRAY2BINARY:u10|                                         ; 3 (3)             ; 1 (1)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|GRAY2BINARY:u10                                                                                                                                                            ;              ;
-;    |I2C_CCD_Config:u8|                                       ; 266 (205)         ; 132 (94)     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|I2C_CCD_Config:u8                                                                                                                                                          ;              ;
+;    |I2C_CCD_Config:u8|                                       ; 246 (185)         ; 131 (93)     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|I2C_CCD_Config:u8                                                                                                                                                          ;              ;
 ;       |I2C_Controller:u0|                                    ; 61 (61)           ; 38 (38)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|I2C_CCD_Config:u8|I2C_Controller:u0                                                                                                                                        ;              ;
 ;    |RAW2RGB:u4|                                              ; 94 (78)           ; 66 (55)      ; 30672       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|RAW2RGB:u4                                                                                                                                                                 ;              ;
 ;       |Line_Buffer1:u0|                                      ; 16 (0)            ; 11 (0)       ; 30672       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|RAW2RGB:u4|Line_Buffer1:u0                                                                                                                                                 ;              ;
@@ -355,7 +355,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |SEG7_LUT:u5|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u5                                                                                                                                                  ;              ;
 ;       |SEG7_LUT:u6|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u6                                                                                                                                                  ;              ;
 ;       |SEG7_LUT:u7|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u7                                                                                                                                                  ;              ;
-;    |Sdram_Control:u7|                                        ; 730 (299)         ; 710 (176)    ; 31744       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|Sdram_Control:u7                                                                                                                                                           ;              ;
+;    |Sdram_Control:u7|                                        ; 734 (303)         ; 710 (176)    ; 31744       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|Sdram_Control:u7                                                                                                                                                           ;              ;
 ;       |Sdram_RD_FIFO:u_read1_fifo|                           ; 75 (0)            ; 106 (0)      ; 7680        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo                                                                                                                                ;              ;
 ;          |dcfifo_mixed_widths:dcfifo_mixed_widths_component| ; 75 (0)            ; 106 (0)      ; 7680        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component                                                                              ;              ;
 ;             |dcfifo_dih1:auto_generated|                     ; 75 (14)           ; 106 (27)     ; 7680        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated                                                   ;              ;
@@ -521,7 +521,8 @@ Encoding Type:  One-Hot
 ; I2C_CCD_Config:u8|mSetup_ST~9                                                                                                                           ; Lost fanout                                                                 ;
 ; I2C_CCD_Config:u8|mSetup_ST~10                                                                                                                          ; Lost fanout                                                                 ;
 ; CCD_Capture:u3|Y_Cont[9..15]                                                                                                                            ; Lost fanout                                                                 ;
-; Total Number of Removed Registers = 76                                                                                                                  ;                                                                             ;
+; I2C_CCD_Config:u8|LUT_INDEX[5]                                                                                                                          ; Stuck at GND due to stuck port data_in                                      ;
+; Total Number of Removed Registers = 77                                                                                                                  ;                                                                             ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 
@@ -556,12 +557,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1120  ;
+; Total registers                              ; 1119  ;
 ; Number of registers using Synchronous Clear  ; 184   ;
-; Number of registers using Synchronous Load   ; 64    ;
-; Number of registers using Asynchronous Clear ; 973   ;
+; Number of registers using Synchronous Load   ; 63    ;
+; Number of registers using Asynchronous Clear ; 972   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 433   ;
+; Number of registers using Clock Enable       ; 430   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -602,32 +603,31 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|RAW2RGB:u4|mCCD_B[10]                                            ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115_CAMERA|CCD_Capture:u3|Y_Cont[4]                                         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|BA[1]                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|control_interface:u_control_interface|timer[14] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|command_delay[0]              ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|I2C_CCD_Config:u8|senosr_exposure[12]                            ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|VGA_Controller:u1|oVGA_G[8]                                      ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|SA[8]                         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|SA[4]                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115_CAMERA|CCD_Capture:u3|X_Cont[3]                                         ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|rp_shift[0]                   ;
-; 5:1                ; 19 bits   ; 57 LEs        ; 38 LEs               ; 19 LEs                 ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|mADDR[12]                                       ;
-; 64:1               ; 5 bits    ; 210 LEs       ; 70 LEs               ; 140 LEs                ; Yes        ; |DE2_115_CAMERA|I2C_CCD_Config:u8|mI2C_DATA[9]                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|CMD[1]                                          ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|RD_MASK[1]                                      ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|mWR                                             ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|ST[5]                                           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|I2C_CCD_Config:u8|senosr_exposure[10]                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115_CAMERA|I2C_CCD_Config:u8|Mux12                                          ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |DE2_115_CAMERA|RAW2RGB:u4|Add0                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|RAW2RGB:u4|mCCD_R[9]                                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115_CAMERA|CCD_Capture:u3|Y_Cont[5]                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|BA[1]                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|control_interface:u_control_interface|timer[2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|command_delay[4]             ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|I2C_CCD_Config:u8|senosr_exposure[11]                           ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|VGA_Controller:u1|oVGA_R[9]                                     ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|SA[9]                        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|SA[4]                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115_CAMERA|CCD_Capture:u3|X_Cont[7]                                        ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|command:u_command|rp_shift[0]                  ;
+; 5:1                ; 19 bits   ; 57 LEs        ; 38 LEs               ; 19 LEs                 ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|mADDR[16]                                      ;
+; 64:1               ; 12 bits   ; 504 LEs       ; 216 LEs              ; 288 LEs                ; Yes        ; |DE2_115_CAMERA|I2C_CCD_Config:u8|mI2C_DATA[10]                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|CMD[0]                                         ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|mRD                                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|WR_MASK[0]                                     ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115_CAMERA|Sdram_Control:u7|ST[5]                                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE2_115_CAMERA|I2C_CCD_Config:u8|senosr_exposure[7]                            ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |DE2_115_CAMERA|RAW2RGB:u4|Add0                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1913,7 +1913,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 10.0 Build 218 06/27/2010 SJ Web Edition
-    Info: Processing started: Tue Nov 29 09:19:07 2016
+    Info: Processing started: Tue Nov 29 18:43:27 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115_CAMERA -c DE2_115_CAMERA
 Info: Found 1 design units, including 1 entities, in source file sdram_control/command.v
     Info: Found entity 1: command
@@ -2645,18 +2645,18 @@ Warning: Design contains 49 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "IRDA_RXD"
     Warning (15610): No output dependent on input pin "FL_RY"
     Warning (15610): No output dependent on input pin "D5M_STROBE"
-Info: Implemented 2422 device resources after synthesis - the final resource count might be different
+Info: Implemented 2407 device resources after synthesis - the final resource count might be different
     Info: Implemented 88 input pins
     Info: Implemented 234 output pins
     Info: Implemented 106 bidirectional pins
-    Info: Implemented 1907 logic cells
+    Info: Implemented 1892 logic cells
     Info: Implemented 86 RAM segments
     Info: Implemented 1 PLLs
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 315 warnings
     Info: Peak virtual memory: 264 megabytes
-    Info: Processing ended: Tue Nov 29 09:19:26 2016
+    Info: Processing ended: Tue Nov 29 18:43:46 2016
     Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:09
 
 
 +------------------------------------------+
