@@ -6919,42 +6919,6 @@ cout
 
 # end
 # entity
-DE2_115_CAMERA
-# storage
-db|DE2_115_CAMERA.(0).cnf
-db|DE2_115_CAMERA.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-de2_115_camera.v
-aaf15fbc19e54e6d1650db91ef2fa46
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 lpm_divide
 # storage
 db|DE2_115_CAMERA.(72).cnf
@@ -7267,6 +7231,75 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 RAW2RGB:u4
+}
+# macro_sequence
+
+# end
+# entity
+Image_Crop
+# storage
+db|DE2_115_CAMERA.(73).cnf
+db|DE2_115_CAMERA.(73).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|image_crop.v
+fd1eb56c49bc80fbc922432df371777
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# macro_sequence
+
+# end
+# entity
+DE2_115_CAMERA
+# storage
+db|DE2_115_CAMERA.(0).cnf
+db|DE2_115_CAMERA.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+de2_115_camera.v
+aaf15fbc19e54e6d1650db91ef2fa46
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
 }
 # macro_sequence
 

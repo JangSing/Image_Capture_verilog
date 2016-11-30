@@ -1,5 +1,5 @@
 Assembler report for DE2_115_CAMERA
-Wed Nov 30 11:04:51 2016
+Wed Nov 30 14:27:35 2016
 Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Nov 30 11:04:51 2016 ;
+; Assembler Status      ; Successful - Wed Nov 30 14:27:35 2016 ;
 ; Revision Name         ; DE2_115_CAMERA                        ;
 ; Top-level Entity Name ; DE2_115_CAMERA                        ;
 ; Family                ; Cyclone IV E                          ;
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 10.0 Build 218 06/27/2010 SJ Web Edition
-    Info: Processing started: Wed Nov 30 11:04:36 2016
+    Info: Processing started: Wed Nov 30 14:27:19 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE2_115_CAMERA -c DE2_115_CAMERA
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 460 megabytes
-    Info: Processing ended: Wed Nov 30 11:04:51 2016
-    Info: Elapsed time: 00:00:15
+    Info: Processing ended: Wed Nov 30 14:27:35 2016
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:06
 
 
