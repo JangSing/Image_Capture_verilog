@@ -233,7 +233,7 @@ always
 begin
 	case(LUT_INDEX)
 	0	:	LUT_DATA	<=	24'h000000;
-	1	:	LUT_DATA	<=	24'h20c000;				//	Mirror Row and Columns
+	1	:	LUT_DATA	<=	24'h208000;				//	Mirror Row and Columns
 	2	:	LUT_DATA	<=	{8'h09,senosr_exposure};//	Exposure
 	3	:	LUT_DATA	<=	24'h050000;				//	H_Blanking
 	4	:	LUT_DATA	<=	24'h060019;				//	V_Blanking	

@@ -7136,6 +7136,142 @@ RGB2GRAY:u9
 
 # end
 # entity
+GRAY2BINARY
+# storage
+db|DE2_115_CAMERA.(71).cnf
+db|DE2_115_CAMERA.(71).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|gray2binary.v
+a9a726237158ec1dc72e686277023aa
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+threshold
+0111110100
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+GRAY2BINARY:u10
+}
+# macro_sequence
+
+# end
+# entity
+I2C_CCD_Config
+# storage
+db|DE2_115_CAMERA.(62).cnf
+db|DE2_115_CAMERA.(62).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|i2c_ccd_config.v
+7a64c5650f927d7d32c862fe111768
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+default_exposure
+0000011011000000
+PARAMETER_UNSIGNED_BIN
+DEF
+exposure_change_value
+0000000011001000
+PARAMETER_UNSIGNED_BIN
+DEF
+CLK_Freq
+50000000
+PARAMETER_SIGNED_DEC
+DEF
+I2C_Freq
+20000
+PARAMETER_SIGNED_DEC
+DEF
+LUT_SIZE
+25
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+I2C_CCD_Config:u8
+}
+# macro_sequence
+
+# end
+# entity
+RAW2RGB
+# storage
+db|DE2_115_CAMERA.(43).cnf
+db|DE2_115_CAMERA.(43).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|raw2rgb.v
+47a99fc05c23331eaea92edd9d8740
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+RAW2RGB:u4
+}
+# macro_sequence
+
+# end
+# entity
 VGA_Controller
 # storage
 db|DE2_115_CAMERA.(63).cnf
@@ -7217,142 +7353,6 @@ DEF
 }
 # hierarchies {
 VGA_Controller:u1
-}
-# macro_sequence
-
-# end
-# entity
-GRAY2BINARY
-# storage
-db|DE2_115_CAMERA.(71).cnf
-db|DE2_115_CAMERA.(71).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|gray2binary.v
-a9a726237158ec1dc72e686277023aa
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-threshold
-0111110100
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# hierarchies {
-GRAY2BINARY:u10
-}
-# macro_sequence
-
-# end
-# entity
-RAW2RGB
-# storage
-db|DE2_115_CAMERA.(43).cnf
-db|DE2_115_CAMERA.(43).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|raw2rgb.v
-6eb04f1d7f64e88298fa34a6fc786bf
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-RAW2RGB:u4
-}
-# macro_sequence
-
-# end
-# entity
-I2C_CCD_Config
-# storage
-db|DE2_115_CAMERA.(62).cnf
-db|DE2_115_CAMERA.(62).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|i2c_ccd_config.v
-4eaebaa8a6cd8a0192655c7dd3f2613
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-default_exposure
-0000011011000000
-PARAMETER_UNSIGNED_BIN
-DEF
-exposure_change_value
-0000000011001000
-PARAMETER_UNSIGNED_BIN
-DEF
-CLK_Freq
-50000000
-PARAMETER_SIGNED_DEC
-DEF
-I2C_Freq
-20000
-PARAMETER_SIGNED_DEC
-DEF
-LUT_SIZE
-25
-PARAMETER_SIGNED_DEC
-DEF
-}
-# hierarchies {
-I2C_CCD_Config:u8
 }
 # macro_sequence
 
