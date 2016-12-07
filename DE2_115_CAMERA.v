@@ -448,125 +448,189 @@ end
 //auto start when power on
 assign auto_start = ((KEY[0])&&(DLY_RST_3)&&(!DLY_RST_4))? 1'b1:1'b0;
 //Reset module
-Reset_Delay			u2	(	.iCLK(CLOCK2_50),
-							.iRST(KEY[0]),
-							.oRST_0(DLY_RST_0),
-							.oRST_1(DLY_RST_1),
-							.oRST_2(DLY_RST_2),
-							.oRST_3(DLY_RST_3),
-							.oRST_4(DLY_RST_4)
+Reset_Delay			u0	(
+              .iCLK(CLOCK2_50),
+              .iRST(KEY[0]),
+              .oRST_0(DLY_RST_0),
+              .oRST_1(DLY_RST_1),
+              .oRST_2(DLY_RST_2),
+              .oRST_3(DLY_RST_3),
+              .oRST_4(DLY_RST_4)
+						);
+//D5M I2C control
+I2C_CCD_Config 		u1	(	//	Host Side
+              .iCLK(CLOCK2_50),
+              .iRST_N(DLY_RST_2),
+              .iEXPOSURE_ADJ(KEY[1]),
+              .iEXPOSURE_DEC_p(SW[0]),
+              .iZOOM_MODE_SW(SW[16]),
+              //	I2C Side
+              .I2C_SCLK(D5M_SCLK),
+              .I2C_SDAT(D5M_SDATA)
 						);
 //D5M image capture
-CCD_Capture			u3	(	.oDATA(mCCD_DATA),
-							.oDVAL(mCCD_DVAL),
-							.oX_Cont(X_Cont),
-							.oY_Cont(Y_Cont),
-							.oFrame_Cont(Frame_Cont),
-							.iDATA(rCCD_DATA),
-							.iFVAL(rCCD_FVAL),
-							.iLVAL(rCCD_LVAL),
-							.iSTART(!KEY[3]|auto_start),
-							.iEND(!KEY[2]),
-							.iCLK(~D5M_PIXLCLK),
-							.iRST(DLY_RST_2)
+CCD_Capture			u2	(
+              .oDATA(mCCD_DATA),
+              .oDVAL(mCCD_DVAL),
+              .oX_Cont(X_Cont),
+              .oY_Cont(Y_Cont),
+              .oFrame_Cont(Frame_Cont),
+              .iDATA(rCCD_DATA),
+              .iFVAL(rCCD_FVAL),
+              .iLVAL(rCCD_LVAL),
+              .iSTART(!KEY[3]|auto_start),
+              .iEND(!KEY[2]),
+              .iCLK(D5M_PIXLCLK),
+              .iRST(DLY_RST_2)
 						);
 //D5M raw date convert to RGB data
-RAW2RGB				u4	(	.iCLK(D5M_PIXLCLK),
-							.iRST(DLY_RST_1),
-							.iDATA(mCCD_DATA),
-							.iDVAL(mCCD_DVAL),
-							.oRed(sCCD_R),
-							.oGreen(sCCD_G),
-							.oBlue(sCCD_B),
-							.oDVAL(sCCD_DVAL),
-							.iX_Cont(X_Cont),
-							.iY_Cont(Y_Cont)
-						);
-//Frame count display
-SEG7_LUT_8 			u5	(	.oSEG0(HEX0),.oSEG1(HEX1),
-							.oSEG2(HEX2),.oSEG3(HEX3),
-							.oSEG4(HEX4),.oSEG5(HEX5),
-							.oSEG6(HEX6),.oSEG7(HEX7),
-							.iDIG(Frame_Cont[31:0])
+RAW2RGB				u3	(
+              .iCLK(D5M_PIXLCLK),
+              .iRST(DLY_RST_1),
+              .iDATA(mCCD_DATA),
+              .iDVAL(mCCD_DVAL),
+              .oRed(wVGA_R),
+              .oGreen(wVGA_G),
+              .oBlue(wVGA_B),
+              .oDVAL(sCCD_DVAL),
+              .iX_Cont(X_Cont),
+              .iY_Cont(Y_Cont)
 						);
 
-sdram_pll 			u6	(
-							.inclk0(CLOCK2_50),
-							.c0(sdram_ctrl_clk),
-							.c1(DRAM_CLK),
-							.c2(D5M_XCLKIN), //25M
-							.c3(VGA_CLK)     //25M
+//GRAYSCALE
+wire [11:0]wVGA_R ;
+wire [11:0]wVGA_G ;
+wire [11:0]wVGA_B ;
+
+wire gCCD_DVAL;
+wire [11:0] gDATA;
+
+RGB2GRAY 			u7(
+        .oDVAL(gCCD_DVAL),
+        .oDATA(gDATA),
+        .iRed(wVGA_R),
+        .iGreen(wVGA_G),
+        .iBlue(wVGA_B),
+        .iCLK(D5M_PIXLCLK),
+        .iRST(DLY_RST_2),
+        .iDVAL(sCCD_DVAL)
+		);
+
+wire [11:0]wDISP_R;
+wire [11:0]wDISP_G;
+wire [11:0]wDISP_B;
+
+assign wDISP_R =SW[1] ? gDATA:wVGA_R;
+assign wDISP_G =SW[1] ? gDATA:wVGA_G;
+assign wDISP_B =SW[1] ? gDATA:wVGA_B;
+
+//BLACK AND WHITE
+wire bCCD_DVAL;
+wire [11:0]bDATA;
+
+GRAY2BINARY			u8(
+        .oDVAL(bCCD_DVAL),
+        .oDATA(bDATA),
+        .iDATA(gDATA),
+        .iCLK(D5M_PIXLCLK),
+        .iRST(DLY_RST_2),
+        .iDVAL(gCCD_DVAL)
+		);
+
+wire [11:0]bDISP_R;
+wire [11:0]bDISP_G;
+wire [11:0]bDISP_B;
+
+assign bDISP_R =SW[2] ? bDATA:wDISP_R;
+assign bDISP_G =SW[2] ? bDATA:wDISP_G;
+assign bDISP_B =SW[2] ? bDATA:wDISP_B;
+
+//Frame count display
+SEG7_LUT_8 			u4	(
+              .oSEG0(HEX0),.oSEG1(HEX1),
+              .oSEG2(HEX2),.oSEG3(HEX3),
+              .oSEG4(HEX4),.oSEG5(HEX5),
+              .oSEG6(HEX6),.oSEG7(HEX7),
+              .iDIG(Frame_Cont[31:0])
+						);
+
+sdram_pll 			u5	(
+              .inclk0(CLOCK2_50),
+              .c0(sdram_ctrl_clk),
+              .c1(DRAM_CLK),
+              .c2(D5M_XCLKIN), //25M
+              .c3(VGA_CLK)     //25M
 						);
 
 //SDRam Read and Write as Frame Buffer
-Sdram_Control	u7	(	//	HOST Side
-						    .RESET_N(KEY[0]),
-							.CLK(sdram_ctrl_clk),
+Sdram_Control	u6	(	//	HOST Side
+              .RESET_N(KEY[0]),
+              .CLK(sdram_ctrl_clk),
 
-							//	FIFO Write Side 1
-							.WR1_DATA({1'b0,sCCD_G[11:7],sCCD_B[11:2]}),
-							.WR1(sCCD_DVAL),
-							.WR1_ADDR(0),
-						    .WR1_MAX_ADDR(640*480/2),
-						    .WR1_LENGTH(8'h50),
-							.WR1_LOAD(!DLY_RST_0),
-							.WR1_CLK(D5M_PIXLCLK),
+              //	FIFO Write Side 1
+              .WR1_DATA({1'b0,bDISP_G[11:7],bDISP_B[11:2]}),
+              .WR1(bCCD_DVAL),
+              .WR1_ADDR(0),
+              .WR1_MAX_ADDR(640*480/2),
+              .WR1_LENGTH(8'h50),
+              .WR1_LOAD(!DLY_RST_0),
+              .WR1_CLK(~D5M_PIXLCLK),
 
-							//	FIFO Write Side 2
-							.WR2_DATA({1'b0,sCCD_G[6:2],sCCD_R[11:2]}),
-							.WR2(sCCD_DVAL),
-							.WR2_ADDR(23'h100000),
-						    .WR2_MAX_ADDR(23'h100000+640*480/2),
-							.WR2_LENGTH(8'h50),
-							.WR2_LOAD(!DLY_RST_0),
-							.WR2_CLK(D5M_PIXLCLK),
+              //	FIFO Write Side 2
+              .WR2_DATA({1'b0,bDISP_G[6:2],bDISP_R[11:2]}),
+              .WR2(bCCD_DVAL),
+              .WR2_ADDR(23'h100000),
+              .WR2_MAX_ADDR(23'h100000+640*480/2),
+              .WR2_LENGTH(8'h50),
+              .WR2_LOAD(!DLY_RST_0),
+              .WR2_CLK(~D5M_PIXLCLK),
 
-							//	FIFO Read Side 1
-						    .RD1_DATA(Read_DATA1),
-				        	.RD1(Read),
-				        	.RD1_ADDR(0),
-						    .RD1_MAX_ADDR(640*480/2),
-							.RD1_LENGTH(8'h50),
-							.RD1_LOAD(!DLY_RST_0),
-							.RD1_CLK(~VGA_CTRL_CLK),
+              //	FIFO Read Side 1
+              .RD1_DATA(Read_DATA1),
+              .RD1(Read),
+              .RD1_ADDR(0),
+              .RD1_MAX_ADDR(640*480/2),
+              .RD1_LENGTH(8'h50),
+              .RD1_LOAD(!DLY_RST_0),
+              .RD1_CLK(~VGA_CTRL_CLK),
 
-							//	FIFO Read Side 2
-						    .RD2_DATA(Read_DATA2),
-							.RD2(Read),
-							.RD2_ADDR(23'h100000),
-						    .RD2_MAX_ADDR(23'h100000+640*480/2),
-							.RD2_LENGTH(8'h50),
-				        	.RD2_LOAD(!DLY_RST_0),
-							.RD2_CLK(~VGA_CTRL_CLK),
+              //	FIFO Read Side 2
+              .RD2_DATA(Read_DATA2),
+              .RD2(Read),
+              .RD2_ADDR(23'h100000),
+              .RD2_MAX_ADDR(23'h100000+640*480/2),
+              .RD2_LENGTH(8'h50),
+              .RD2_LOAD(!DLY_RST_0),
+              .RD2_CLK(~VGA_CTRL_CLK),
 
-							//	SDRAM Side
-						    .SA(DRAM_ADDR),
-							.BA(DRAM_BA),
-							.CS_N(DRAM_CS_N),
-							.CKE(DRAM_CKE),
-							.RAS_N(DRAM_RAS_N),
-							.CAS_N(DRAM_CAS_N),
-							.WE_N(DRAM_WE_N),
-							.DQ(DRAM_DQ),
-							.DQM(DRAM_DQM)
+              //	SDRAM Side
+              .SA(DRAM_ADDR),
+              .BA(DRAM_BA),
+              .CS_N(DRAM_CS_N),
+              .CKE(DRAM_CKE),
+              .RAS_N(DRAM_RAS_N),
+              .CAS_N(DRAM_CAS_N),
+              .WE_N(DRAM_WE_N),
+              .DQ(DRAM_DQ),
+              .DQM(DRAM_DQM)
 						);
-//D5M I2C control
-I2C_CCD_Config 		u8	(	//	Host Side
-							.iCLK(CLOCK2_50),
-							.iRST_N(DLY_RST_2),
-							.iEXPOSURE_ADJ(KEY[1]),
-							.iEXPOSURE_DEC_p(SW[0]),
-							.iZOOM_MODE_SW(SW[16]),
-							//	I2C Side
-							.I2C_SCLK(D5M_SCLK),
-							.I2C_SDAT(D5M_SDATA)
-						);
+
+
+wire [9:0]SD_VGA_R ;
+wire [9:0]SD_VGA_G ;
+wire [9:0]SD_VGA_B ;            
+            
+assign SD_VGA_R = Read_DATA2[9:0];
+assign SD_VGA_G = {Read_DATA1[14:10],Read_DATA2[14:10]};
+assign SD_VGA_B = Read_DATA1[9:0];
+
+
 //VGA DISPLAY
-VGA_Controller		u1	(	//	Host Side
+VGA_Controller		u9	(	//	Host Side
 							.oRequest(Read),
-							.iRed  (bDISP_R),
-							.iGreen(bDISP_G),
-							.iBlue (bDISP_B),
+							.iRed  (SD_VGA_R),
+							.iGreen(SD_VGA_G),
+							.iBlue (SD_VGA_B),
 							//	VGA Side
 							.oVGA_R(oVGA_R),
 							.oVGA_G(oVGA_G),
@@ -581,56 +645,6 @@ VGA_Controller		u1	(	//	Host Side
 							.iZOOM_MODE_SW(SW[16])
 						);
 
-wire [9:0]wVGA_R ;
-wire [9:0]wVGA_G ;
-wire [9:0]wVGA_B ;
 
-assign wVGA_R = Read_DATA2[9:0];
-assign wVGA_G = {Read_DATA1[14:10],Read_DATA2[14:10]};
-assign wVGA_B = Read_DATA1[9:0];
-
-wire WGFlag;
-wire gCCD_DVAL;
-wire [9:0] gDATA;
-
-RGB2GRAY 			u9(
-        .oDVAL(gCCD_DVAL),
-        .oDATA(gDATA),
-        .oFlag(WGFlag),
-        .iRed(wVGA_R),
-        .iGreen(wVGA_G),
-        .iBlue(wVGA_B),
-        .iCLK(VGA_CTRL_CLK),
-        .iRST(DLY_RST_2),
-        .iDVAL(Read)
-		);
-    
-wire [9:0]wDISP_R;
-wire [9:0]wDISP_G;
-wire [9:0]wDISP_B;
-
-assign wDISP_R =SW[1] ? gDATA:wVGA_R;
-assign wDISP_G =SW[1] ? gDATA:wVGA_G;
-assign wDISP_B =SW[1] ? gDATA:wVGA_B;
-    
-wire bCCD_DVAL;
-wire [9:0]bDATA;
-
-GRAY2BINARY			u10(
-        .oDVAL(bCCD_DVAL),
-        .oDATA(bDATA),
-        .iDATA(gDATA),
-        .iCLK(VGA_CTRL_CLK),
-        .iRST(DLY_RST_2),
-        .iDVAL(gCCD_DVAL)
-		);
-
-wire [9:0]bDISP_R;
-wire [9:0]bDISP_G;
-wire [9:0]bDISP_B;
-
-assign bDISP_R =SW[2] ? bDATA:wDISP_R;
-assign bDISP_G =SW[2] ? bDATA:wDISP_G;
-assign bDISP_B =SW[2] ? bDATA:wDISP_B;
 
 endmodule

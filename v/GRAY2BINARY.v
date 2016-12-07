@@ -9,11 +9,11 @@ module GRAY2BINARY(
 input       iDVAL;
 input       iCLK;
 input       iRST;
-input       [9:0] iDATA;
-output reg  [9:0] oDATA;
+input       [11:0] iDATA;
+output reg  [11:0] oDATA;
 output reg	oDVAL;
 
-parameter threshold = 10'd500;//d278;
+parameter threshold = 12'd1547;//d278;
 
 always@(posedge iCLK or negedge iRST)
 begin
@@ -25,12 +25,13 @@ begin
   else
     begin
       oDVAL <= iDVAL;
-        if(iDATA > threshold) begin 
-          oDATA <= 10'd1023;
-        end
-        else begin
-          oDATA <= 0;
-        end
+      if(iDATA > threshold) begin 
+        oDATA <= 12'd4095;
+      end
+      else begin
+        oDATA <= 0;
+      end
+      
     end
 end
 endmodule

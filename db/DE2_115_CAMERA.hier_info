@@ -43,6 +43,8 @@ EX_IO[4] <> <UNC>
 EX_IO[5] <> <UNC>
 EX_IO[6] <> <UNC>
 SW[0] => SW[0].IN1
+SW[1] => wDISP_R[11].OUTPUTSELECT
+SW[1] => wDISP_R[10].OUTPUTSELECT
 SW[1] => wDISP_R[9].OUTPUTSELECT
 SW[1] => wDISP_R[8].OUTPUTSELECT
 SW[1] => wDISP_R[7].OUTPUTSELECT
@@ -51,8 +53,8 @@ SW[1] => wDISP_R[5].OUTPUTSELECT
 SW[1] => wDISP_R[4].OUTPUTSELECT
 SW[1] => wDISP_R[3].OUTPUTSELECT
 SW[1] => wDISP_R[2].OUTPUTSELECT
-SW[1] => wDISP_R[1].OUTPUTSELECT
-SW[1] => wDISP_R[0].OUTPUTSELECT
+SW[1] => wDISP_G[11].OUTPUTSELECT
+SW[1] => wDISP_G[10].OUTPUTSELECT
 SW[1] => wDISP_G[9].OUTPUTSELECT
 SW[1] => wDISP_G[8].OUTPUTSELECT
 SW[1] => wDISP_G[7].OUTPUTSELECT
@@ -61,8 +63,8 @@ SW[1] => wDISP_G[5].OUTPUTSELECT
 SW[1] => wDISP_G[4].OUTPUTSELECT
 SW[1] => wDISP_G[3].OUTPUTSELECT
 SW[1] => wDISP_G[2].OUTPUTSELECT
-SW[1] => wDISP_G[1].OUTPUTSELECT
-SW[1] => wDISP_G[0].OUTPUTSELECT
+SW[1] => wDISP_B[11].OUTPUTSELECT
+SW[1] => wDISP_B[10].OUTPUTSELECT
 SW[1] => wDISP_B[9].OUTPUTSELECT
 SW[1] => wDISP_B[8].OUTPUTSELECT
 SW[1] => wDISP_B[7].OUTPUTSELECT
@@ -71,8 +73,6 @@ SW[1] => wDISP_B[5].OUTPUTSELECT
 SW[1] => wDISP_B[4].OUTPUTSELECT
 SW[1] => wDISP_B[3].OUTPUTSELECT
 SW[1] => wDISP_B[2].OUTPUTSELECT
-SW[1] => wDISP_B[1].OUTPUTSELECT
-SW[1] => wDISP_B[0].OUTPUTSELECT
 SW[1] => LEDR[1].DATAIN
 SW[2] => bDISP_R.OUTPUTSELECT
 SW[2] => bDISP_R.OUTPUTSELECT
@@ -120,62 +120,62 @@ SW[14] => LEDR[14].DATAIN
 SW[15] => LEDR[15].DATAIN
 SW[16] => SW[16].IN2
 SW[17] => LEDR[17].DATAIN
-HEX0[0] <= SEG7_LUT_8:u5.oSEG0
-HEX0[1] <= SEG7_LUT_8:u5.oSEG0
-HEX0[2] <= SEG7_LUT_8:u5.oSEG0
-HEX0[3] <= SEG7_LUT_8:u5.oSEG0
-HEX0[4] <= SEG7_LUT_8:u5.oSEG0
-HEX0[5] <= SEG7_LUT_8:u5.oSEG0
-HEX0[6] <= SEG7_LUT_8:u5.oSEG0
-HEX1[0] <= SEG7_LUT_8:u5.oSEG1
-HEX1[1] <= SEG7_LUT_8:u5.oSEG1
-HEX1[2] <= SEG7_LUT_8:u5.oSEG1
-HEX1[3] <= SEG7_LUT_8:u5.oSEG1
-HEX1[4] <= SEG7_LUT_8:u5.oSEG1
-HEX1[5] <= SEG7_LUT_8:u5.oSEG1
-HEX1[6] <= SEG7_LUT_8:u5.oSEG1
-HEX2[0] <= SEG7_LUT_8:u5.oSEG2
-HEX2[1] <= SEG7_LUT_8:u5.oSEG2
-HEX2[2] <= SEG7_LUT_8:u5.oSEG2
-HEX2[3] <= SEG7_LUT_8:u5.oSEG2
-HEX2[4] <= SEG7_LUT_8:u5.oSEG2
-HEX2[5] <= SEG7_LUT_8:u5.oSEG2
-HEX2[6] <= SEG7_LUT_8:u5.oSEG2
-HEX3[0] <= SEG7_LUT_8:u5.oSEG3
-HEX3[1] <= SEG7_LUT_8:u5.oSEG3
-HEX3[2] <= SEG7_LUT_8:u5.oSEG3
-HEX3[3] <= SEG7_LUT_8:u5.oSEG3
-HEX3[4] <= SEG7_LUT_8:u5.oSEG3
-HEX3[5] <= SEG7_LUT_8:u5.oSEG3
-HEX3[6] <= SEG7_LUT_8:u5.oSEG3
-HEX4[0] <= SEG7_LUT_8:u5.oSEG4
-HEX4[1] <= SEG7_LUT_8:u5.oSEG4
-HEX4[2] <= SEG7_LUT_8:u5.oSEG4
-HEX4[3] <= SEG7_LUT_8:u5.oSEG4
-HEX4[4] <= SEG7_LUT_8:u5.oSEG4
-HEX4[5] <= SEG7_LUT_8:u5.oSEG4
-HEX4[6] <= SEG7_LUT_8:u5.oSEG4
-HEX5[0] <= SEG7_LUT_8:u5.oSEG5
-HEX5[1] <= SEG7_LUT_8:u5.oSEG5
-HEX5[2] <= SEG7_LUT_8:u5.oSEG5
-HEX5[3] <= SEG7_LUT_8:u5.oSEG5
-HEX5[4] <= SEG7_LUT_8:u5.oSEG5
-HEX5[5] <= SEG7_LUT_8:u5.oSEG5
-HEX5[6] <= SEG7_LUT_8:u5.oSEG5
-HEX6[0] <= SEG7_LUT_8:u5.oSEG6
-HEX6[1] <= SEG7_LUT_8:u5.oSEG6
-HEX6[2] <= SEG7_LUT_8:u5.oSEG6
-HEX6[3] <= SEG7_LUT_8:u5.oSEG6
-HEX6[4] <= SEG7_LUT_8:u5.oSEG6
-HEX6[5] <= SEG7_LUT_8:u5.oSEG6
-HEX6[6] <= SEG7_LUT_8:u5.oSEG6
-HEX7[0] <= SEG7_LUT_8:u5.oSEG7
-HEX7[1] <= SEG7_LUT_8:u5.oSEG7
-HEX7[2] <= SEG7_LUT_8:u5.oSEG7
-HEX7[3] <= SEG7_LUT_8:u5.oSEG7
-HEX7[4] <= SEG7_LUT_8:u5.oSEG7
-HEX7[5] <= SEG7_LUT_8:u5.oSEG7
-HEX7[6] <= SEG7_LUT_8:u5.oSEG7
+HEX0[0] <= SEG7_LUT_8:u4.oSEG0
+HEX0[1] <= SEG7_LUT_8:u4.oSEG0
+HEX0[2] <= SEG7_LUT_8:u4.oSEG0
+HEX0[3] <= SEG7_LUT_8:u4.oSEG0
+HEX0[4] <= SEG7_LUT_8:u4.oSEG0
+HEX0[5] <= SEG7_LUT_8:u4.oSEG0
+HEX0[6] <= SEG7_LUT_8:u4.oSEG0
+HEX1[0] <= SEG7_LUT_8:u4.oSEG1
+HEX1[1] <= SEG7_LUT_8:u4.oSEG1
+HEX1[2] <= SEG7_LUT_8:u4.oSEG1
+HEX1[3] <= SEG7_LUT_8:u4.oSEG1
+HEX1[4] <= SEG7_LUT_8:u4.oSEG1
+HEX1[5] <= SEG7_LUT_8:u4.oSEG1
+HEX1[6] <= SEG7_LUT_8:u4.oSEG1
+HEX2[0] <= SEG7_LUT_8:u4.oSEG2
+HEX2[1] <= SEG7_LUT_8:u4.oSEG2
+HEX2[2] <= SEG7_LUT_8:u4.oSEG2
+HEX2[3] <= SEG7_LUT_8:u4.oSEG2
+HEX2[4] <= SEG7_LUT_8:u4.oSEG2
+HEX2[5] <= SEG7_LUT_8:u4.oSEG2
+HEX2[6] <= SEG7_LUT_8:u4.oSEG2
+HEX3[0] <= SEG7_LUT_8:u4.oSEG3
+HEX3[1] <= SEG7_LUT_8:u4.oSEG3
+HEX3[2] <= SEG7_LUT_8:u4.oSEG3
+HEX3[3] <= SEG7_LUT_8:u4.oSEG3
+HEX3[4] <= SEG7_LUT_8:u4.oSEG3
+HEX3[5] <= SEG7_LUT_8:u4.oSEG3
+HEX3[6] <= SEG7_LUT_8:u4.oSEG3
+HEX4[0] <= SEG7_LUT_8:u4.oSEG4
+HEX4[1] <= SEG7_LUT_8:u4.oSEG4
+HEX4[2] <= SEG7_LUT_8:u4.oSEG4
+HEX4[3] <= SEG7_LUT_8:u4.oSEG4
+HEX4[4] <= SEG7_LUT_8:u4.oSEG4
+HEX4[5] <= SEG7_LUT_8:u4.oSEG4
+HEX4[6] <= SEG7_LUT_8:u4.oSEG4
+HEX5[0] <= SEG7_LUT_8:u4.oSEG5
+HEX5[1] <= SEG7_LUT_8:u4.oSEG5
+HEX5[2] <= SEG7_LUT_8:u4.oSEG5
+HEX5[3] <= SEG7_LUT_8:u4.oSEG5
+HEX5[4] <= SEG7_LUT_8:u4.oSEG5
+HEX5[5] <= SEG7_LUT_8:u4.oSEG5
+HEX5[6] <= SEG7_LUT_8:u4.oSEG5
+HEX6[0] <= SEG7_LUT_8:u4.oSEG6
+HEX6[1] <= SEG7_LUT_8:u4.oSEG6
+HEX6[2] <= SEG7_LUT_8:u4.oSEG6
+HEX6[3] <= SEG7_LUT_8:u4.oSEG6
+HEX6[4] <= SEG7_LUT_8:u4.oSEG6
+HEX6[5] <= SEG7_LUT_8:u4.oSEG6
+HEX6[6] <= SEG7_LUT_8:u4.oSEG6
+HEX7[0] <= SEG7_LUT_8:u4.oSEG7
+HEX7[1] <= SEG7_LUT_8:u4.oSEG7
+HEX7[2] <= SEG7_LUT_8:u4.oSEG7
+HEX7[3] <= SEG7_LUT_8:u4.oSEG7
+HEX7[4] <= SEG7_LUT_8:u4.oSEG7
+HEX7[5] <= SEG7_LUT_8:u4.oSEG7
+HEX7[6] <= SEG7_LUT_8:u4.oSEG7
 LCD_BLON <= <GND>
 LCD_DATA[0] <> <UNC>
 LCD_DATA[1] <> <UNC>
@@ -204,35 +204,35 @@ SD_DAT[1] <> <UNC>
 SD_DAT[2] <> <UNC>
 SD_DAT[3] <> <UNC>
 SD_WP_N => ~NO_FANOUT~
-VGA_B[0] <= VGA_Controller:u1.oVGA_B
-VGA_B[1] <= VGA_Controller:u1.oVGA_B
-VGA_B[2] <= VGA_Controller:u1.oVGA_B
-VGA_B[3] <= VGA_Controller:u1.oVGA_B
-VGA_B[4] <= VGA_Controller:u1.oVGA_B
-VGA_B[5] <= VGA_Controller:u1.oVGA_B
-VGA_B[6] <= VGA_Controller:u1.oVGA_B
-VGA_B[7] <= VGA_Controller:u1.oVGA_B
-VGA_BLANK_N <= VGA_Controller:u1.oVGA_BLANK
+VGA_B[0] <= VGA_Controller:u9.oVGA_B
+VGA_B[1] <= VGA_Controller:u9.oVGA_B
+VGA_B[2] <= VGA_Controller:u9.oVGA_B
+VGA_B[3] <= VGA_Controller:u9.oVGA_B
+VGA_B[4] <= VGA_Controller:u9.oVGA_B
+VGA_B[5] <= VGA_Controller:u9.oVGA_B
+VGA_B[6] <= VGA_Controller:u9.oVGA_B
+VGA_B[7] <= VGA_Controller:u9.oVGA_B
+VGA_BLANK_N <= VGA_Controller:u9.oVGA_BLANK
 VGA_CLK <= VGA_CLK.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[0] <= VGA_Controller:u1.oVGA_G
-VGA_G[1] <= VGA_Controller:u1.oVGA_G
-VGA_G[2] <= VGA_Controller:u1.oVGA_G
-VGA_G[3] <= VGA_Controller:u1.oVGA_G
-VGA_G[4] <= VGA_Controller:u1.oVGA_G
-VGA_G[5] <= VGA_Controller:u1.oVGA_G
-VGA_G[6] <= VGA_Controller:u1.oVGA_G
-VGA_G[7] <= VGA_Controller:u1.oVGA_G
-VGA_HS <= VGA_Controller:u1.oVGA_H_SYNC
-VGA_R[0] <= VGA_Controller:u1.oVGA_R
-VGA_R[1] <= VGA_Controller:u1.oVGA_R
-VGA_R[2] <= VGA_Controller:u1.oVGA_R
-VGA_R[3] <= VGA_Controller:u1.oVGA_R
-VGA_R[4] <= VGA_Controller:u1.oVGA_R
-VGA_R[5] <= VGA_Controller:u1.oVGA_R
-VGA_R[6] <= VGA_Controller:u1.oVGA_R
-VGA_R[7] <= VGA_Controller:u1.oVGA_R
-VGA_SYNC_N <= VGA_Controller:u1.oVGA_SYNC
-VGA_VS <= VGA_Controller:u1.oVGA_V_SYNC
+VGA_G[0] <= VGA_Controller:u9.oVGA_G
+VGA_G[1] <= VGA_Controller:u9.oVGA_G
+VGA_G[2] <= VGA_Controller:u9.oVGA_G
+VGA_G[3] <= VGA_Controller:u9.oVGA_G
+VGA_G[4] <= VGA_Controller:u9.oVGA_G
+VGA_G[5] <= VGA_Controller:u9.oVGA_G
+VGA_G[6] <= VGA_Controller:u9.oVGA_G
+VGA_G[7] <= VGA_Controller:u9.oVGA_G
+VGA_HS <= VGA_Controller:u9.oVGA_H_SYNC
+VGA_R[0] <= VGA_Controller:u9.oVGA_R
+VGA_R[1] <= VGA_Controller:u9.oVGA_R
+VGA_R[2] <= VGA_Controller:u9.oVGA_R
+VGA_R[3] <= VGA_Controller:u9.oVGA_R
+VGA_R[4] <= VGA_Controller:u9.oVGA_R
+VGA_R[5] <= VGA_Controller:u9.oVGA_R
+VGA_R[6] <= VGA_Controller:u9.oVGA_R
+VGA_R[7] <= VGA_Controller:u9.oVGA_R
+VGA_SYNC_N <= VGA_Controller:u9.oVGA_SYNC
+VGA_VS <= VGA_Controller:u9.oVGA_V_SYNC
 AUD_ADCDAT => ~NO_FANOUT~
 AUD_ADCLRCK <> <UNC>
 AUD_BCLK <> <UNC>
@@ -331,63 +331,63 @@ OTG_RD_N <= <GND>
 OTG_RST_N <= <GND>
 OTG_WE_N <= <GND>
 IRDA_RXD => ~NO_FANOUT~
-DRAM_ADDR[0] <= Sdram_Control:u7.SA
-DRAM_ADDR[1] <= Sdram_Control:u7.SA
-DRAM_ADDR[2] <= Sdram_Control:u7.SA
-DRAM_ADDR[3] <= Sdram_Control:u7.SA
-DRAM_ADDR[4] <= Sdram_Control:u7.SA
-DRAM_ADDR[5] <= Sdram_Control:u7.SA
-DRAM_ADDR[6] <= Sdram_Control:u7.SA
-DRAM_ADDR[7] <= Sdram_Control:u7.SA
-DRAM_ADDR[8] <= Sdram_Control:u7.SA
-DRAM_ADDR[9] <= Sdram_Control:u7.SA
-DRAM_ADDR[10] <= Sdram_Control:u7.SA
-DRAM_ADDR[11] <= Sdram_Control:u7.SA
-DRAM_ADDR[12] <= Sdram_Control:u7.SA
-DRAM_BA[0] <= Sdram_Control:u7.BA
-DRAM_BA[1] <= Sdram_Control:u7.BA
-DRAM_CAS_N <= Sdram_Control:u7.CAS_N
-DRAM_CKE <= Sdram_Control:u7.CKE
-DRAM_CLK <= sdram_pll:u6.c1
-DRAM_CS_N <= Sdram_Control:u7.CS_N
-DRAM_DQ[0] <> Sdram_Control:u7.DQ
-DRAM_DQ[1] <> Sdram_Control:u7.DQ
-DRAM_DQ[2] <> Sdram_Control:u7.DQ
-DRAM_DQ[3] <> Sdram_Control:u7.DQ
-DRAM_DQ[4] <> Sdram_Control:u7.DQ
-DRAM_DQ[5] <> Sdram_Control:u7.DQ
-DRAM_DQ[6] <> Sdram_Control:u7.DQ
-DRAM_DQ[7] <> Sdram_Control:u7.DQ
-DRAM_DQ[8] <> Sdram_Control:u7.DQ
-DRAM_DQ[9] <> Sdram_Control:u7.DQ
-DRAM_DQ[10] <> Sdram_Control:u7.DQ
-DRAM_DQ[11] <> Sdram_Control:u7.DQ
-DRAM_DQ[12] <> Sdram_Control:u7.DQ
-DRAM_DQ[13] <> Sdram_Control:u7.DQ
-DRAM_DQ[14] <> Sdram_Control:u7.DQ
-DRAM_DQ[15] <> Sdram_Control:u7.DQ
-DRAM_DQ[16] <> Sdram_Control:u7.DQ
-DRAM_DQ[17] <> Sdram_Control:u7.DQ
-DRAM_DQ[18] <> Sdram_Control:u7.DQ
-DRAM_DQ[19] <> Sdram_Control:u7.DQ
-DRAM_DQ[20] <> Sdram_Control:u7.DQ
-DRAM_DQ[21] <> Sdram_Control:u7.DQ
-DRAM_DQ[22] <> Sdram_Control:u7.DQ
-DRAM_DQ[23] <> Sdram_Control:u7.DQ
-DRAM_DQ[24] <> Sdram_Control:u7.DQ
-DRAM_DQ[25] <> Sdram_Control:u7.DQ
-DRAM_DQ[26] <> Sdram_Control:u7.DQ
-DRAM_DQ[27] <> Sdram_Control:u7.DQ
-DRAM_DQ[28] <> Sdram_Control:u7.DQ
-DRAM_DQ[29] <> Sdram_Control:u7.DQ
-DRAM_DQ[30] <> Sdram_Control:u7.DQ
-DRAM_DQ[31] <> Sdram_Control:u7.DQ
-DRAM_DQM[0] <= Sdram_Control:u7.DQM
-DRAM_DQM[1] <= Sdram_Control:u7.DQM
-DRAM_DQM[2] <= Sdram_Control:u7.DQM
-DRAM_DQM[3] <= Sdram_Control:u7.DQM
-DRAM_RAS_N <= Sdram_Control:u7.RAS_N
-DRAM_WE_N <= Sdram_Control:u7.WE_N
+DRAM_ADDR[0] <= Sdram_Control:u6.SA
+DRAM_ADDR[1] <= Sdram_Control:u6.SA
+DRAM_ADDR[2] <= Sdram_Control:u6.SA
+DRAM_ADDR[3] <= Sdram_Control:u6.SA
+DRAM_ADDR[4] <= Sdram_Control:u6.SA
+DRAM_ADDR[5] <= Sdram_Control:u6.SA
+DRAM_ADDR[6] <= Sdram_Control:u6.SA
+DRAM_ADDR[7] <= Sdram_Control:u6.SA
+DRAM_ADDR[8] <= Sdram_Control:u6.SA
+DRAM_ADDR[9] <= Sdram_Control:u6.SA
+DRAM_ADDR[10] <= Sdram_Control:u6.SA
+DRAM_ADDR[11] <= Sdram_Control:u6.SA
+DRAM_ADDR[12] <= Sdram_Control:u6.SA
+DRAM_BA[0] <= Sdram_Control:u6.BA
+DRAM_BA[1] <= Sdram_Control:u6.BA
+DRAM_CAS_N <= Sdram_Control:u6.CAS_N
+DRAM_CKE <= Sdram_Control:u6.CKE
+DRAM_CLK <= sdram_pll:u5.c1
+DRAM_CS_N <= Sdram_Control:u6.CS_N
+DRAM_DQ[0] <> Sdram_Control:u6.DQ
+DRAM_DQ[1] <> Sdram_Control:u6.DQ
+DRAM_DQ[2] <> Sdram_Control:u6.DQ
+DRAM_DQ[3] <> Sdram_Control:u6.DQ
+DRAM_DQ[4] <> Sdram_Control:u6.DQ
+DRAM_DQ[5] <> Sdram_Control:u6.DQ
+DRAM_DQ[6] <> Sdram_Control:u6.DQ
+DRAM_DQ[7] <> Sdram_Control:u6.DQ
+DRAM_DQ[8] <> Sdram_Control:u6.DQ
+DRAM_DQ[9] <> Sdram_Control:u6.DQ
+DRAM_DQ[10] <> Sdram_Control:u6.DQ
+DRAM_DQ[11] <> Sdram_Control:u6.DQ
+DRAM_DQ[12] <> Sdram_Control:u6.DQ
+DRAM_DQ[13] <> Sdram_Control:u6.DQ
+DRAM_DQ[14] <> Sdram_Control:u6.DQ
+DRAM_DQ[15] <> Sdram_Control:u6.DQ
+DRAM_DQ[16] <> Sdram_Control:u6.DQ
+DRAM_DQ[17] <> Sdram_Control:u6.DQ
+DRAM_DQ[18] <> Sdram_Control:u6.DQ
+DRAM_DQ[19] <> Sdram_Control:u6.DQ
+DRAM_DQ[20] <> Sdram_Control:u6.DQ
+DRAM_DQ[21] <> Sdram_Control:u6.DQ
+DRAM_DQ[22] <> Sdram_Control:u6.DQ
+DRAM_DQ[23] <> Sdram_Control:u6.DQ
+DRAM_DQ[24] <> Sdram_Control:u6.DQ
+DRAM_DQ[25] <> Sdram_Control:u6.DQ
+DRAM_DQ[26] <> Sdram_Control:u6.DQ
+DRAM_DQ[27] <> Sdram_Control:u6.DQ
+DRAM_DQ[28] <> Sdram_Control:u6.DQ
+DRAM_DQ[29] <> Sdram_Control:u6.DQ
+DRAM_DQ[30] <> Sdram_Control:u6.DQ
+DRAM_DQ[31] <> Sdram_Control:u6.DQ
+DRAM_DQM[0] <= Sdram_Control:u6.DQM
+DRAM_DQM[1] <= Sdram_Control:u6.DQM
+DRAM_DQM[2] <= Sdram_Control:u6.DQM
+DRAM_DQM[3] <= Sdram_Control:u6.DQM
+DRAM_RAS_N <= Sdram_Control:u6.RAS_N
+DRAM_WE_N <= Sdram_Control:u6.WE_N
 SRAM_ADDR[0] <= <GND>
 SRAM_ADDR[1] <= <GND>
 SRAM_ADDR[2] <= <GND>
@@ -480,16 +480,16 @@ D5M_D[10] => rCCD_DATA[10].DATAIN
 D5M_D[11] => rCCD_DATA[11].DATAIN
 D5M_FVAL => rCCD_FVAL.DATAIN
 D5M_LVAL => rCCD_LVAL.DATAIN
-D5M_PIXLCLK => D5M_PIXLCLK.IN3
+D5M_PIXLCLK => D5M_PIXLCLK.IN4
 D5M_RESET_N <= DLY_RST_1.DB_MAX_OUTPUT_PORT_TYPE
-D5M_SCLK <= I2C_CCD_Config:u8.I2C_SCLK
-D5M_SDATA <> I2C_CCD_Config:u8.I2C_SDAT
+D5M_SCLK <= I2C_CCD_Config:u1.I2C_SCLK
+D5M_SDATA <> I2C_CCD_Config:u1.I2C_SDAT
 D5M_STROBE => ~NO_FANOUT~
 D5M_TRIGGER <= <VCC>
-D5M_XCLKIN <= sdram_pll:u6.c2
+D5M_XCLKIN <= sdram_pll:u5.c2
 
 
-|DE2_115_CAMERA|Reset_Delay:u2
+|DE2_115_CAMERA|Reset_Delay:u0
 iCLK => oRST_4~reg0.CLK
 iCLK => oRST_3~reg0.CLK
 iCLK => oRST_2~reg0.CLK
@@ -571,7 +571,278 @@ oRST_3 <= oRST_3~reg0.DB_MAX_OUTPUT_PORT_TYPE
 oRST_4 <= oRST_4~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|CCD_Capture:u3
+|DE2_115_CAMERA|I2C_CCD_Config:u1
+iCLK => mI2C_CLK_DIV[0].CLK
+iCLK => mI2C_CLK_DIV[1].CLK
+iCLK => mI2C_CLK_DIV[2].CLK
+iCLK => mI2C_CLK_DIV[3].CLK
+iCLK => mI2C_CLK_DIV[4].CLK
+iCLK => mI2C_CLK_DIV[5].CLK
+iCLK => mI2C_CLK_DIV[6].CLK
+iCLK => mI2C_CLK_DIV[7].CLK
+iCLK => mI2C_CLK_DIV[8].CLK
+iCLK => mI2C_CLK_DIV[9].CLK
+iCLK => mI2C_CLK_DIV[10].CLK
+iCLK => mI2C_CLK_DIV[11].CLK
+iCLK => mI2C_CLK_DIV[12].CLK
+iCLK => mI2C_CLK_DIV[13].CLK
+iCLK => mI2C_CLK_DIV[14].CLK
+iCLK => mI2C_CLK_DIV[15].CLK
+iCLK => mI2C_CTRL_CLK.CLK
+iCLK => combo_cnt[0].CLK
+iCLK => combo_cnt[1].CLK
+iCLK => combo_cnt[2].CLK
+iCLK => combo_cnt[3].CLK
+iCLK => combo_cnt[4].CLK
+iCLK => combo_cnt[5].CLK
+iCLK => combo_cnt[6].CLK
+iCLK => combo_cnt[7].CLK
+iCLK => combo_cnt[8].CLK
+iCLK => combo_cnt[9].CLK
+iCLK => combo_cnt[10].CLK
+iCLK => combo_cnt[11].CLK
+iCLK => combo_cnt[12].CLK
+iCLK => combo_cnt[13].CLK
+iCLK => combo_cnt[14].CLK
+iCLK => combo_cnt[15].CLK
+iCLK => combo_cnt[16].CLK
+iCLK => combo_cnt[17].CLK
+iCLK => combo_cnt[18].CLK
+iCLK => combo_cnt[19].CLK
+iCLK => combo_cnt[20].CLK
+iCLK => combo_cnt[21].CLK
+iCLK => combo_cnt[22].CLK
+iCLK => combo_cnt[23].CLK
+iCLK => combo_cnt[24].CLK
+iCLK => senosr_exposure[0].CLK
+iCLK => senosr_exposure[1].CLK
+iCLK => senosr_exposure[2].CLK
+iCLK => senosr_exposure[3].CLK
+iCLK => senosr_exposure[4].CLK
+iCLK => senosr_exposure[5].CLK
+iCLK => senosr_exposure[6].CLK
+iCLK => senosr_exposure[7].CLK
+iCLK => senosr_exposure[8].CLK
+iCLK => senosr_exposure[9].CLK
+iCLK => senosr_exposure[10].CLK
+iCLK => senosr_exposure[11].CLK
+iCLK => senosr_exposure[12].CLK
+iCLK => senosr_exposure[13].CLK
+iCLK => senosr_exposure[14].CLK
+iCLK => senosr_exposure[15].CLK
+iCLK => iexposure_adj_delay[0].CLK
+iCLK => iexposure_adj_delay[1].CLK
+iCLK => iexposure_adj_delay[2].CLK
+iCLK => iexposure_adj_delay[3].CLK
+iRST_N => i2c_reset.IN1
+iRST_N => combo_cnt[0].ACLR
+iRST_N => combo_cnt[1].ACLR
+iRST_N => combo_cnt[2].ACLR
+iRST_N => combo_cnt[3].ACLR
+iRST_N => combo_cnt[4].ACLR
+iRST_N => combo_cnt[5].ACLR
+iRST_N => combo_cnt[6].ACLR
+iRST_N => combo_cnt[7].ACLR
+iRST_N => combo_cnt[8].ACLR
+iRST_N => combo_cnt[9].ACLR
+iRST_N => combo_cnt[10].ACLR
+iRST_N => combo_cnt[11].ACLR
+iRST_N => combo_cnt[12].ACLR
+iRST_N => combo_cnt[13].ACLR
+iRST_N => combo_cnt[14].ACLR
+iRST_N => combo_cnt[15].ACLR
+iRST_N => combo_cnt[16].ACLR
+iRST_N => combo_cnt[17].ACLR
+iRST_N => combo_cnt[18].ACLR
+iRST_N => combo_cnt[19].ACLR
+iRST_N => combo_cnt[20].ACLR
+iRST_N => combo_cnt[21].ACLR
+iRST_N => combo_cnt[22].ACLR
+iRST_N => combo_cnt[23].ACLR
+iRST_N => combo_cnt[24].ACLR
+iRST_N => senosr_exposure[0].ACLR
+iRST_N => senosr_exposure[1].ACLR
+iRST_N => senosr_exposure[2].ACLR
+iRST_N => senosr_exposure[3].ACLR
+iRST_N => senosr_exposure[4].ACLR
+iRST_N => senosr_exposure[5].ACLR
+iRST_N => senosr_exposure[6].PRESET
+iRST_N => senosr_exposure[7].PRESET
+iRST_N => senosr_exposure[8].ACLR
+iRST_N => senosr_exposure[9].PRESET
+iRST_N => senosr_exposure[10].PRESET
+iRST_N => senosr_exposure[11].ACLR
+iRST_N => senosr_exposure[12].ACLR
+iRST_N => senosr_exposure[13].ACLR
+iRST_N => senosr_exposure[14].ACLR
+iRST_N => senosr_exposure[15].ACLR
+iRST_N => iexposure_adj_delay[0].ACLR
+iRST_N => iexposure_adj_delay[1].ACLR
+iRST_N => iexposure_adj_delay[2].ACLR
+iRST_N => iexposure_adj_delay[3].ACLR
+iZOOM_MODE_SW => ~NO_FANOUT~
+iEXPOSURE_ADJ => iexposure_adj_delay[0].DATAIN
+iEXPOSURE_ADJ => Equal0.IN0
+iEXPOSURE_DEC_p => senosr_exposure_temp[17].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[16].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[15].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[14].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[13].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[12].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[11].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[10].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[9].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[8].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[7].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[6].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[5].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[4].OUTPUTSELECT
+iEXPOSURE_DEC_p => senosr_exposure_temp[3].OUTPUTSELECT
+I2C_SCLK <= I2C_Controller:u0.I2C_SCLK
+I2C_SDAT <> I2C_Controller:u0.I2C_SDAT
+
+
+|DE2_115_CAMERA|I2C_CCD_Config:u1|I2C_Controller:u0
+CLOCK => SD[0].CLK
+CLOCK => SD[1].CLK
+CLOCK => SD[2].CLK
+CLOCK => SD[3].CLK
+CLOCK => SD[4].CLK
+CLOCK => SD[5].CLK
+CLOCK => SD[6].CLK
+CLOCK => SD[7].CLK
+CLOCK => SD[8].CLK
+CLOCK => SD[9].CLK
+CLOCK => SD[10].CLK
+CLOCK => SD[11].CLK
+CLOCK => SD[12].CLK
+CLOCK => SD[13].CLK
+CLOCK => SD[14].CLK
+CLOCK => SD[15].CLK
+CLOCK => SD[16].CLK
+CLOCK => SD[17].CLK
+CLOCK => SD[18].CLK
+CLOCK => SD[19].CLK
+CLOCK => SD[20].CLK
+CLOCK => SD[21].CLK
+CLOCK => SD[22].CLK
+CLOCK => SD[23].CLK
+CLOCK => SD[24].CLK
+CLOCK => SD[25].CLK
+CLOCK => SD[26].CLK
+CLOCK => SD[27].CLK
+CLOCK => SD[28].CLK
+CLOCK => SD[29].CLK
+CLOCK => SD[30].CLK
+CLOCK => SD[31].CLK
+CLOCK => END~reg0.CLK
+CLOCK => ACK4.CLK
+CLOCK => ACK3.CLK
+CLOCK => ACK2.CLK
+CLOCK => ACK1.CLK
+CLOCK => SDO.CLK
+CLOCK => SCLK.CLK
+CLOCK => SD_COUNTER[0].CLK
+CLOCK => SD_COUNTER[1].CLK
+CLOCK => SD_COUNTER[2].CLK
+CLOCK => SD_COUNTER[3].CLK
+CLOCK => SD_COUNTER[4].CLK
+CLOCK => SD_COUNTER[5].CLK
+CLOCK => SD_COUNTER[6].CLK
+CLOCK => comb.DATAB
+I2C_SCLK <= comb.DB_MAX_OUTPUT_PORT_TYPE
+I2C_SDAT <> I2C_SDAT
+I2C_DATA[0] => SD.DATAB
+I2C_DATA[1] => SD.DATAB
+I2C_DATA[2] => SD.DATAB
+I2C_DATA[3] => SD.DATAB
+I2C_DATA[4] => SD.DATAB
+I2C_DATA[5] => SD.DATAB
+I2C_DATA[6] => SD.DATAB
+I2C_DATA[7] => SD.DATAB
+I2C_DATA[8] => SD.DATAB
+I2C_DATA[9] => SD.DATAB
+I2C_DATA[10] => SD.DATAB
+I2C_DATA[11] => SD.DATAB
+I2C_DATA[12] => SD.DATAB
+I2C_DATA[13] => SD.DATAB
+I2C_DATA[14] => SD.DATAB
+I2C_DATA[15] => SD.DATAB
+I2C_DATA[16] => SD.DATAB
+I2C_DATA[17] => SD.DATAB
+I2C_DATA[18] => SD.DATAB
+I2C_DATA[19] => SD.DATAB
+I2C_DATA[20] => SD.DATAB
+I2C_DATA[21] => SD.DATAB
+I2C_DATA[22] => SD.DATAB
+I2C_DATA[23] => SD.DATAB
+I2C_DATA[24] => SD.DATAB
+I2C_DATA[25] => SD.DATAB
+I2C_DATA[26] => SD.DATAB
+I2C_DATA[27] => SD.DATAB
+I2C_DATA[28] => SD.DATAB
+I2C_DATA[29] => SD.DATAB
+I2C_DATA[30] => SD.DATAB
+I2C_DATA[31] => SD.DATAB
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+GO => SD_COUNTER.OUTPUTSELECT
+END <= END~reg0.DB_MAX_OUTPUT_PORT_TYPE
+W_R => ~NO_FANOUT~
+ACK <= comb.DB_MAX_OUTPUT_PORT_TYPE
+RESET => END~reg0.PRESET
+RESET => ACK4.ACLR
+RESET => ACK3.ACLR
+RESET => ACK2.ACLR
+RESET => ACK1.ACLR
+RESET => SDO.PRESET
+RESET => SCLK.PRESET
+RESET => SD_COUNTER[0].PRESET
+RESET => SD_COUNTER[1].PRESET
+RESET => SD_COUNTER[2].PRESET
+RESET => SD_COUNTER[3].PRESET
+RESET => SD_COUNTER[4].PRESET
+RESET => SD_COUNTER[5].PRESET
+RESET => SD_COUNTER[6].ACLR
+RESET => SD[0].ENA
+RESET => SD[31].ENA
+RESET => SD[30].ENA
+RESET => SD[29].ENA
+RESET => SD[28].ENA
+RESET => SD[27].ENA
+RESET => SD[26].ENA
+RESET => SD[25].ENA
+RESET => SD[24].ENA
+RESET => SD[23].ENA
+RESET => SD[22].ENA
+RESET => SD[21].ENA
+RESET => SD[20].ENA
+RESET => SD[19].ENA
+RESET => SD[18].ENA
+RESET => SD[17].ENA
+RESET => SD[16].ENA
+RESET => SD[15].ENA
+RESET => SD[14].ENA
+RESET => SD[13].ENA
+RESET => SD[12].ENA
+RESET => SD[11].ENA
+RESET => SD[10].ENA
+RESET => SD[9].ENA
+RESET => SD[8].ENA
+RESET => SD[7].ENA
+RESET => SD[6].ENA
+RESET => SD[5].ENA
+RESET => SD[4].ENA
+RESET => SD[3].ENA
+RESET => SD[2].ENA
+RESET => SD[1].ENA
+
+
+|DE2_115_CAMERA|CCD_Capture:u2
 oDATA[0] <= mCCD_DATA[0].DB_MAX_OUTPUT_PORT_TYPE
 oDATA[1] <= mCCD_DATA[1].DB_MAX_OUTPUT_PORT_TYPE
 oDATA[2] <= mCCD_DATA[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -841,7 +1112,7 @@ iRST => Frame_Cont[31].ACLR
 iRST => mSTART.ACLR
 
 
-|DE2_115_CAMERA|RAW2RGB:u4
+|DE2_115_CAMERA|RAW2RGB:u3
 oRed[0] <= mCCD_R[0].DB_MAX_OUTPUT_PORT_TYPE
 oRed[1] <= mCCD_R[1].DB_MAX_OUTPUT_PORT_TYPE
 oRed[2] <= mCCD_R[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -986,7 +1257,7 @@ iRST => mCCD_R[10].ACLR
 iRST => mCCD_R[11].ACLR
 
 
-|DE2_115_CAMERA|RAW2RGB:u4|Line_Buffer1:u0
+|DE2_115_CAMERA|RAW2RGB:u3|Line_Buffer1:u0
 clken => clken.IN1
 clock => clock.IN1
 shiftin[0] => shiftin[0].IN1
@@ -1039,7 +1310,7 @@ taps1x[10] <= altshift_taps:altshift_taps_component.taps
 taps1x[11] <= altshift_taps:altshift_taps_component.taps
 
 
-|DE2_115_CAMERA|RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component
+|DE2_115_CAMERA|RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component
 shiftin[0] => shift_taps_mds:auto_generated.shiftin[0]
 shiftin[1] => shift_taps_mds:auto_generated.shiftin[1]
 shiftin[2] => shift_taps_mds:auto_generated.shiftin[2]
@@ -1093,7 +1364,7 @@ taps[23] <= shift_taps_mds:auto_generated.taps[23]
 aclr => ~NO_FANOUT~
 
 
-|DE2_115_CAMERA|RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated
+|DE2_115_CAMERA|RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated
 clken => altsyncram_rma1:altsyncram2.clocken0
 clken => cntr_lvf:cntr1.clk_en
 clock => altsyncram_rma1:altsyncram2.clock0
@@ -1148,7 +1419,7 @@ taps[22] <= altsyncram_rma1:altsyncram2.q_b[22]
 taps[23] <= altsyncram_rma1:altsyncram2.q_b[23]
 
 
-|DE2_115_CAMERA|RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|altsyncram_rma1:altsyncram2
+|DE2_115_CAMERA|RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|altsyncram_rma1:altsyncram2
 address_a[0] => ram_block3a0.PORTAADDR
 address_a[0] => ram_block3a1.PORTAADDR
 address_a[0] => ram_block3a2.PORTAADDR
@@ -1799,7 +2070,7 @@ wren_a => ram_block3a22.PORTAWE
 wren_a => ram_block3a23.PORTAWE
 
 
-|DE2_115_CAMERA|RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1
+|DE2_115_CAMERA|RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1
 clk_en => counter_reg_bit[10].IN0
 clock => counter_reg_bit[10].CLK
 clock => counter_reg_bit[9].CLK
@@ -1825,7 +2096,7 @@ q[9] <= counter_reg_bit[9].DB_MAX_OUTPUT_PORT_TYPE
 q[10] <= counter_reg_bit[10].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1|cmpr_8ic:cmpr4
+|DE2_115_CAMERA|RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1|cmpr_8ic:cmpr4
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1851,7 +2122,183 @@ datab[9] => data_wire[6].IN1
 datab[10] => data_wire[7].IN1
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5
+|DE2_115_CAMERA|RGB2GRAY:u7
+oDVAL <= oDVAL~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[0] <= oDATA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[1] <= oDATA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[2] <= oDATA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[3] <= oDATA[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[4] <= oDATA[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[5] <= oDATA[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[6] <= oDATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[7] <= oDATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[8] <= oDATA[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[9] <= oDATA[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[10] <= oDATA[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[11] <= oDATA[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+iRed[0] => Add0.IN12
+iRed[1] => Add0.IN11
+iRed[2] => Add0.IN10
+iRed[3] => Add0.IN9
+iRed[4] => Add0.IN8
+iRed[5] => Add0.IN7
+iRed[6] => Add0.IN6
+iRed[7] => Add0.IN5
+iRed[8] => Add0.IN4
+iRed[9] => Add0.IN3
+iRed[10] => Add0.IN2
+iRed[11] => Add0.IN1
+iGreen[0] => Add0.IN24
+iGreen[1] => Add0.IN23
+iGreen[2] => Add0.IN22
+iGreen[3] => Add0.IN21
+iGreen[4] => Add0.IN20
+iGreen[5] => Add0.IN19
+iGreen[6] => Add0.IN18
+iGreen[7] => Add0.IN17
+iGreen[8] => Add0.IN16
+iGreen[9] => Add0.IN15
+iGreen[10] => Add0.IN14
+iGreen[11] => Add0.IN13
+iBlue[0] => Add1.IN26
+iBlue[1] => Add1.IN25
+iBlue[2] => Add1.IN24
+iBlue[3] => Add1.IN23
+iBlue[4] => Add1.IN22
+iBlue[5] => Add1.IN21
+iBlue[6] => Add1.IN20
+iBlue[7] => Add1.IN19
+iBlue[8] => Add1.IN18
+iBlue[9] => Add1.IN17
+iBlue[10] => Add1.IN16
+iBlue[11] => Add1.IN15
+iCLK => oDVAL~reg0.CLK
+iCLK => counter[0].CLK
+iCLK => counter[1].CLK
+iCLK => counter[2].CLK
+iCLK => counter[3].CLK
+iCLK => counter[4].CLK
+iCLK => counter[5].CLK
+iCLK => counter[6].CLK
+iCLK => counter[7].CLK
+iCLK => counter[8].CLK
+iCLK => counter[9].CLK
+iCLK => counter[10].CLK
+iCLK => counter[11].CLK
+iCLK => counter[12].CLK
+iCLK => counter[13].CLK
+iCLK => counter[14].CLK
+iCLK => counter[15].CLK
+iCLK => counter[16].CLK
+iCLK => counter[17].CLK
+iCLK => counter[18].CLK
+iCLK => counter[19].CLK
+iCLK => counter[20].CLK
+iCLK => oDATA[0]~reg0.CLK
+iCLK => oDATA[1]~reg0.CLK
+iCLK => oDATA[2]~reg0.CLK
+iCLK => oDATA[3]~reg0.CLK
+iCLK => oDATA[4]~reg0.CLK
+iCLK => oDATA[5]~reg0.CLK
+iCLK => oDATA[6]~reg0.CLK
+iCLK => oDATA[7]~reg0.CLK
+iCLK => oDATA[8]~reg0.CLK
+iCLK => oDATA[9]~reg0.CLK
+iCLK => oDATA[10]~reg0.CLK
+iCLK => oDATA[11]~reg0.CLK
+iRST => oDVAL~reg0.ACLR
+iRST => counter[0].ACLR
+iRST => counter[1].ACLR
+iRST => counter[2].ACLR
+iRST => counter[3].ACLR
+iRST => counter[4].ACLR
+iRST => counter[5].ACLR
+iRST => counter[6].ACLR
+iRST => counter[7].ACLR
+iRST => counter[8].ACLR
+iRST => counter[9].ACLR
+iRST => counter[10].ACLR
+iRST => counter[11].ACLR
+iRST => counter[12].ACLR
+iRST => counter[13].ACLR
+iRST => counter[14].ACLR
+iRST => counter[15].ACLR
+iRST => counter[16].ACLR
+iRST => counter[17].ACLR
+iRST => counter[18].ACLR
+iRST => counter[19].ACLR
+iRST => counter[20].ACLR
+iRST => oDATA[0]~reg0.ACLR
+iRST => oDATA[1]~reg0.ACLR
+iRST => oDATA[2]~reg0.ACLR
+iRST => oDATA[3]~reg0.ACLR
+iRST => oDATA[4]~reg0.ACLR
+iRST => oDATA[5]~reg0.ACLR
+iRST => oDATA[6]~reg0.ACLR
+iRST => oDATA[7]~reg0.ACLR
+iRST => oDATA[8]~reg0.ACLR
+iRST => oDATA[9]~reg0.ACLR
+iRST => oDATA[10]~reg0.ACLR
+iRST => oDATA[11]~reg0.ACLR
+iDVAL => oDVAL~reg0.DATAIN
+
+
+|DE2_115_CAMERA|GRAY2BINARY:u8
+oDVAL <= oDVAL~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[0] <= oDATA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[1] <= oDATA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[2] <= oDATA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[3] <= oDATA[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[4] <= oDATA[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[5] <= oDATA[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[6] <= oDATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[7] <= oDATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[8] <= oDATA[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[9] <= oDATA[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[10] <= oDATA[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+oDATA[11] <= oDATA[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+iDATA[0] => LessThan0.IN24
+iDATA[1] => LessThan0.IN23
+iDATA[2] => LessThan0.IN22
+iDATA[3] => LessThan0.IN21
+iDATA[4] => LessThan0.IN20
+iDATA[5] => LessThan0.IN19
+iDATA[6] => LessThan0.IN18
+iDATA[7] => LessThan0.IN17
+iDATA[8] => LessThan0.IN16
+iDATA[9] => LessThan0.IN15
+iDATA[10] => LessThan0.IN14
+iDATA[11] => LessThan0.IN13
+iCLK => oDATA[0]~reg0.CLK
+iCLK => oDATA[1]~reg0.CLK
+iCLK => oDATA[2]~reg0.CLK
+iCLK => oDATA[3]~reg0.CLK
+iCLK => oDATA[4]~reg0.CLK
+iCLK => oDATA[5]~reg0.CLK
+iCLK => oDATA[6]~reg0.CLK
+iCLK => oDATA[7]~reg0.CLK
+iCLK => oDATA[8]~reg0.CLK
+iCLK => oDATA[9]~reg0.CLK
+iCLK => oDATA[10]~reg0.CLK
+iCLK => oDATA[11]~reg0.CLK
+iCLK => oDVAL~reg0.CLK
+iRST => oDATA[0]~reg0.ACLR
+iRST => oDATA[1]~reg0.ACLR
+iRST => oDATA[2]~reg0.ACLR
+iRST => oDATA[3]~reg0.ACLR
+iRST => oDATA[4]~reg0.ACLR
+iRST => oDATA[5]~reg0.ACLR
+iRST => oDATA[6]~reg0.ACLR
+iRST => oDATA[7]~reg0.ACLR
+iRST => oDATA[8]~reg0.ACLR
+iRST => oDATA[9]~reg0.ACLR
+iRST => oDATA[10]~reg0.ACLR
+iRST => oDATA[11]~reg0.ACLR
+iRST => oDVAL~reg0.ACLR
+iDVAL => oDVAL~reg0.DATAIN
+
+
+|DE2_115_CAMERA|SEG7_LUT_8:u4
 oSEG0[0] <= SEG7_LUT:u0.port0
 oSEG0[1] <= SEG7_LUT:u0.port0
 oSEG0[2] <= SEG7_LUT:u0.port0
@@ -1942,7 +2389,7 @@ iDIG[30] => iDIG[30].IN1
 iDIG[31] => iDIG[31].IN1
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u0
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u0
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -1956,7 +2403,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u1
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u1
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -1970,7 +2417,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u2
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u2
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -1984,7 +2431,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u3
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u3
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -1998,7 +2445,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u4
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u4
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -2012,7 +2459,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u5
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u5
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -2026,7 +2473,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u6
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u6
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -2040,7 +2487,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|SEG7_LUT_8:u5|SEG7_LUT:u7
+|DE2_115_CAMERA|SEG7_LUT_8:u4|SEG7_LUT:u7
 oSEG[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 oSEG[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
@@ -2054,7 +2501,7 @@ iDIG[2] => Decoder0.IN1
 iDIG[3] => Decoder0.IN0
 
 
-|DE2_115_CAMERA|sdram_pll:u6
+|DE2_115_CAMERA|sdram_pll:u5
 inclk0 => sub_wire7[0].IN1
 c0 <= altpll:altpll_component.clk
 c1 <= altpll:altpll_component.clk
@@ -2063,7 +2510,7 @@ c3 <= altpll:altpll_component.clk
 c4 <= altpll:altpll_component.clk
 
 
-|DE2_115_CAMERA|sdram_pll:u6|altpll:altpll_component
+|DE2_115_CAMERA|sdram_pll:u5|altpll:altpll_component
 inclk[0] => altpll_f423:auto_generated.inclk[0]
 inclk[1] => altpll_f423:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -2123,7 +2570,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|DE2_115_CAMERA|sdram_pll:u6|altpll:altpll_component|altpll_f423:auto_generated
+|DE2_115_CAMERA|sdram_pll:u5|altpll:altpll_component|altpll_f423:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
@@ -2133,7 +2580,7 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7
+|DE2_115_CAMERA|Sdram_Control:u6
 RESET_N => RESET_N.IN3
 CLK => CLK.IN7
 WR1_DATA[0] => WR1_DATA[0].IN1
@@ -2578,7 +3025,7 @@ DQM[2] <= DQM[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DQM[3] <= DQM[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|control_interface:u_control_interface
+|DE2_115_CAMERA|Sdram_Control:u6|control_interface:u_control_interface
 CLK => INIT_REQ~reg0.CLK
 CLK => LOAD_MODE~reg0.CLK
 CLK => PRECHARGE~reg0.CLK
@@ -2792,7 +3239,7 @@ INIT_REQ <= INIT_REQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CMD_ACK <= CMD_ACK~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|command:u_command
+|DE2_115_CAMERA|Sdram_Control:u6|command:u_command
 CLK => CKE~reg0.CLK
 CLK => WE_N~reg0.CLK
 CLK => CAS_N~reg0.CLK
@@ -2984,7 +3431,7 @@ CAS_N <= CAS_N~reg0.DB_MAX_OUTPUT_PORT_TYPE
 WE_N <= WE_N~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|sdr_data_path:u_sdr_data_path
+|DE2_115_CAMERA|Sdram_Control:u6|sdr_data_path:u_sdr_data_path
 CLK => DQM[0]~reg0.CLK
 CLK => DQM[1]~reg0.CLK
 CLK => DQM[2]~reg0.CLK
@@ -3067,7 +3514,7 @@ DQM[2] <= DQM[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DQM[3] <= DQM[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo
 aclr => aclr.IN1
 data[0] => data[0].IN1
 data[1] => data[1].IN1
@@ -3131,7 +3578,7 @@ rdusedw[6] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
 rdusedw[7] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 aclr => dcfifo_lhh1:auto_generated.aclr
 data[0] => dcfifo_lhh1:auto_generated.data[0]
 data[1] => dcfifo_lhh1:auto_generated.data[1]
@@ -3208,7 +3655,7 @@ wrusedw[7] <= <GND>
 wrusedw[8] <= <GND>
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
 aclr => a_graycounter_t57:rdptr_g1p.aclr
 aclr => a_graycounter_ojc:wrptr_g1p.aclr
 aclr => altsyncram_rj31:fifo_ram.aclr1
@@ -3317,7 +3764,7 @@ wrclk => wrptr_g[0].CLK
 wrreq => valid_wrreq.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -3339,7 +3786,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -3361,7 +3808,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
 aclr => counter5a1.IN0
 aclr => counter5a0.IN0
 aclr => parity6.IN0
@@ -3404,7 +3851,7 @@ q[7] <= counter5a7.DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter5a8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
 aclr => counter10a[8].IN0
 aclr => counter10a[7].IN0
 aclr => counter10a[6].IN0
@@ -3453,7 +3900,7 @@ q[7] <= counter10a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter10a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -3888,7 +4335,7 @@ wren_a => ram_block11a15.PORTAWE
 wren_a => ram_block11a15.ENA0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -3927,7 +4374,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -3966,7 +4413,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
 clock => dffpipe_hd9:dffpipe13.clock
 clrn => dffpipe_hd9:dffpipe13.clrn
 d[0] => dffpipe_hd9:dffpipe13.d[0]
@@ -3989,7 +4436,7 @@ q[7] <= dffpipe_hd9:dffpipe13.q[7]
 q[8] <= dffpipe_hd9:dffpipe13.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
 clock => dffe14a[8].CLK
 clock => dffe14a[7].CLK
 clock => dffe14a[6].CLK
@@ -4046,7 +4493,7 @@ q[7] <= dffe15a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe15a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
 clock => dffpipe_id9:dffpipe16.clock
 clrn => dffpipe_id9:dffpipe16.clrn
 d[0] => dffpipe_id9:dffpipe16.d[0]
@@ -4069,7 +4516,7 @@ q[7] <= dffpipe_id9:dffpipe16.q[7]
 q[8] <= dffpipe_id9:dffpipe16.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
 clock => dffe17a[8].CLK
 clock => dffe17a[7].CLK
 clock => dffe17a[6].CLK
@@ -4126,7 +4573,7 @@ q[7] <= dffe18a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe18a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -4148,7 +4595,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -4170,7 +4617,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
 aset => counter_reg_bit[0].IN0
 clock => counter_reg_bit[0].CLK
 cnt_en => _.IN0
@@ -4178,7 +4625,7 @@ cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= safe_q[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo
 aclr => aclr.IN1
 data[0] => data[0].IN1
 data[1] => data[1].IN1
@@ -4242,7 +4689,7 @@ rdusedw[6] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
 rdusedw[7] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdusedw
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 aclr => dcfifo_lhh1:auto_generated.aclr
 data[0] => dcfifo_lhh1:auto_generated.data[0]
 data[1] => dcfifo_lhh1:auto_generated.data[1]
@@ -4319,7 +4766,7 @@ wrusedw[7] <= <GND>
 wrusedw[8] <= <GND>
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
 aclr => a_graycounter_t57:rdptr_g1p.aclr
 aclr => a_graycounter_ojc:wrptr_g1p.aclr
 aclr => altsyncram_rj31:fifo_ram.aclr1
@@ -4428,7 +4875,7 @@ wrclk => wrptr_g[0].CLK
 wrreq => valid_wrreq.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -4450,7 +4897,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -4472,7 +4919,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
 aclr => counter5a1.IN0
 aclr => counter5a0.IN0
 aclr => parity6.IN0
@@ -4515,7 +4962,7 @@ q[7] <= counter5a7.DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter5a8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
 aclr => counter10a[8].IN0
 aclr => counter10a[7].IN0
 aclr => counter10a[6].IN0
@@ -4564,7 +5011,7 @@ q[7] <= counter10a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter10a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -4999,7 +5446,7 @@ wren_a => ram_block11a15.PORTAWE
 wren_a => ram_block11a15.ENA0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -5038,7 +5485,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -5077,7 +5524,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
 clock => dffpipe_hd9:dffpipe13.clock
 clrn => dffpipe_hd9:dffpipe13.clrn
 d[0] => dffpipe_hd9:dffpipe13.d[0]
@@ -5100,7 +5547,7 @@ q[7] <= dffpipe_hd9:dffpipe13.q[7]
 q[8] <= dffpipe_hd9:dffpipe13.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
 clock => dffe14a[8].CLK
 clock => dffe14a[7].CLK
 clock => dffe14a[6].CLK
@@ -5157,7 +5604,7 @@ q[7] <= dffe15a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe15a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
 clock => dffpipe_id9:dffpipe16.clock
 clrn => dffpipe_id9:dffpipe16.clrn
 d[0] => dffpipe_id9:dffpipe16.d[0]
@@ -5180,7 +5627,7 @@ q[7] <= dffpipe_id9:dffpipe16.q[7]
 q[8] <= dffpipe_id9:dffpipe16.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
 clock => dffe17a[8].CLK
 clock => dffe17a[7].CLK
 clock => dffe17a[6].CLK
@@ -5237,7 +5684,7 @@ q[7] <= dffe18a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe18a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -5259,7 +5706,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -5281,7 +5728,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
 aset => counter_reg_bit[0].IN0
 clock => counter_reg_bit[0].CLK
 cnt_en => _.IN0
@@ -5289,7 +5736,7 @@ cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= safe_q[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo
 aclr => aclr.IN1
 data[0] => data[0].IN1
 data[1] => data[1].IN1
@@ -5353,7 +5800,7 @@ wrusedw[6] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
 wrusedw[7] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 aclr => dcfifo_dih1:auto_generated.aclr
 data[0] => dcfifo_dih1:auto_generated.data[0]
 data[1] => dcfifo_dih1:auto_generated.data[1]
@@ -5430,7 +5877,7 @@ wrusedw[6] <= dcfifo_dih1:auto_generated.wrusedw[6]
 wrusedw[7] <= dcfifo_dih1:auto_generated.wrusedw[7]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
 aclr => a_graycounter_s57:rdptr_g1p.aclr
 aclr => a_graycounter_pjc:wrptr_g1p.aclr
 aclr => altsyncram_sj31:fifo_ram.aclr1
@@ -5540,7 +5987,7 @@ wrusedw[6] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 wrusedw[7] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -5562,7 +6009,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -5584,7 +6031,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
 aclr => counter7a[8].IN0
 aclr => counter7a[7].IN0
 aclr => counter7a[6].IN0
@@ -5633,7 +6080,7 @@ q[7] <= counter7a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter7a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -5676,7 +6123,7 @@ q[7] <= counter8a7.DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter8a8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -6111,7 +6558,7 @@ wren_a => ram_block11a15.PORTAWE
 wren_a => ram_block11a15.ENA0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
 clock => dffpipe_jd9:dffpipe12.clock
 clrn => dffpipe_jd9:dffpipe12.clrn
 d[0] => dffpipe_jd9:dffpipe12.d[0]
@@ -6134,7 +6581,7 @@ q[7] <= dffpipe_jd9:dffpipe12.q[7]
 q[8] <= dffpipe_jd9:dffpipe12.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
 clock => dffe13a[8].CLK
 clock => dffe13a[7].CLK
 clock => dffe13a[6].CLK
@@ -6191,7 +6638,7 @@ q[7] <= dffe14a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe14a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -6230,7 +6677,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -6269,7 +6716,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
 clock => dffpipe_kd9:dffpipe15.clock
 clrn => dffpipe_kd9:dffpipe15.clrn
 d[0] => dffpipe_kd9:dffpipe15.d[0]
@@ -6292,7 +6739,7 @@ q[7] <= dffpipe_kd9:dffpipe15.q[7]
 q[8] <= dffpipe_kd9:dffpipe15.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
 clock => dffe16a[8].CLK
 clock => dffe16a[7].CLK
 clock => dffe16a[6].CLK
@@ -6349,7 +6796,7 @@ q[7] <= dffe17a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe17a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -6371,7 +6818,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -6393,7 +6840,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
 aset => counter_reg_bit[0].IN0
 clock => counter_reg_bit[0].CLK
 cnt_en => _.IN0
@@ -6401,7 +6848,7 @@ cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= safe_q[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo
 aclr => aclr.IN1
 data[0] => data[0].IN1
 data[1] => data[1].IN1
@@ -6465,7 +6912,7 @@ wrusedw[6] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
 wrusedw[7] <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrusedw
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 aclr => dcfifo_dih1:auto_generated.aclr
 data[0] => dcfifo_dih1:auto_generated.data[0]
 data[1] => dcfifo_dih1:auto_generated.data[1]
@@ -6542,7 +6989,7 @@ wrusedw[6] <= dcfifo_dih1:auto_generated.wrusedw[6]
 wrusedw[7] <= dcfifo_dih1:auto_generated.wrusedw[7]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
 aclr => a_graycounter_s57:rdptr_g1p.aclr
 aclr => a_graycounter_pjc:wrptr_g1p.aclr
 aclr => altsyncram_sj31:fifo_ram.aclr1
@@ -6652,7 +7099,7 @@ wrusedw[6] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 wrusedw[7] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -6674,7 +7121,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -6696,7 +7143,7 @@ gray[8] => bin[8].DATAIN
 gray[8] => xor7.IN0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
 aclr => counter7a[8].IN0
 aclr => counter7a[7].IN0
 aclr => counter7a[6].IN0
@@ -6745,7 +7192,7 @@ q[7] <= counter7a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter7a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -6788,7 +7235,7 @@ q[7] <= counter8a7.DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= counter8a8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
 aclr1 => ram_block11a0.CLR1
 aclr1 => ram_block11a1.CLR1
 aclr1 => ram_block11a2.CLR1
@@ -7223,7 +7670,7 @@ wren_a => ram_block11a15.PORTAWE
 wren_a => ram_block11a15.ENA0
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
 clock => dffpipe_jd9:dffpipe12.clock
 clrn => dffpipe_jd9:dffpipe12.clrn
 d[0] => dffpipe_jd9:dffpipe12.d[0]
@@ -7246,7 +7693,7 @@ q[7] <= dffpipe_jd9:dffpipe12.q[7]
 q[8] <= dffpipe_jd9:dffpipe12.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
 clock => dffe13a[8].CLK
 clock => dffe13a[7].CLK
 clock => dffe13a[6].CLK
@@ -7303,7 +7750,7 @@ q[7] <= dffe14a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe14a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -7342,7 +7789,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
 clock => dffe12a[8].CLK
 clock => dffe12a[7].CLK
 clock => dffe12a[6].CLK
@@ -7381,7 +7828,7 @@ q[7] <= dffe12a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe12a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
 clock => dffpipe_kd9:dffpipe15.clock
 clrn => dffpipe_kd9:dffpipe15.clrn
 d[0] => dffpipe_kd9:dffpipe15.d[0]
@@ -7404,7 +7851,7 @@ q[7] <= dffpipe_kd9:dffpipe15.q[7]
 q[8] <= dffpipe_kd9:dffpipe15.q[8]
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
 clock => dffe16a[8].CLK
 clock => dffe16a[7].CLK
 clock => dffe16a[6].CLK
@@ -7461,7 +7908,7 @@ q[7] <= dffe17a[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffe17a[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -7483,7 +7930,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -7505,7 +7952,7 @@ datab[7] => data_wire[5].IN1
 datab[8] => data_wire[6].IN1
 
 
-|DE2_115_CAMERA|Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
+|DE2_115_CAMERA|Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
 aset => counter_reg_bit[0].IN0
 clock => counter_reg_bit[0].CLK
 cnt_en => _.IN0
@@ -7513,278 +7960,7 @@ cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= safe_q[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115_CAMERA|I2C_CCD_Config:u8
-iCLK => mI2C_CLK_DIV[0].CLK
-iCLK => mI2C_CLK_DIV[1].CLK
-iCLK => mI2C_CLK_DIV[2].CLK
-iCLK => mI2C_CLK_DIV[3].CLK
-iCLK => mI2C_CLK_DIV[4].CLK
-iCLK => mI2C_CLK_DIV[5].CLK
-iCLK => mI2C_CLK_DIV[6].CLK
-iCLK => mI2C_CLK_DIV[7].CLK
-iCLK => mI2C_CLK_DIV[8].CLK
-iCLK => mI2C_CLK_DIV[9].CLK
-iCLK => mI2C_CLK_DIV[10].CLK
-iCLK => mI2C_CLK_DIV[11].CLK
-iCLK => mI2C_CLK_DIV[12].CLK
-iCLK => mI2C_CLK_DIV[13].CLK
-iCLK => mI2C_CLK_DIV[14].CLK
-iCLK => mI2C_CLK_DIV[15].CLK
-iCLK => mI2C_CTRL_CLK.CLK
-iCLK => combo_cnt[0].CLK
-iCLK => combo_cnt[1].CLK
-iCLK => combo_cnt[2].CLK
-iCLK => combo_cnt[3].CLK
-iCLK => combo_cnt[4].CLK
-iCLK => combo_cnt[5].CLK
-iCLK => combo_cnt[6].CLK
-iCLK => combo_cnt[7].CLK
-iCLK => combo_cnt[8].CLK
-iCLK => combo_cnt[9].CLK
-iCLK => combo_cnt[10].CLK
-iCLK => combo_cnt[11].CLK
-iCLK => combo_cnt[12].CLK
-iCLK => combo_cnt[13].CLK
-iCLK => combo_cnt[14].CLK
-iCLK => combo_cnt[15].CLK
-iCLK => combo_cnt[16].CLK
-iCLK => combo_cnt[17].CLK
-iCLK => combo_cnt[18].CLK
-iCLK => combo_cnt[19].CLK
-iCLK => combo_cnt[20].CLK
-iCLK => combo_cnt[21].CLK
-iCLK => combo_cnt[22].CLK
-iCLK => combo_cnt[23].CLK
-iCLK => combo_cnt[24].CLK
-iCLK => senosr_exposure[0].CLK
-iCLK => senosr_exposure[1].CLK
-iCLK => senosr_exposure[2].CLK
-iCLK => senosr_exposure[3].CLK
-iCLK => senosr_exposure[4].CLK
-iCLK => senosr_exposure[5].CLK
-iCLK => senosr_exposure[6].CLK
-iCLK => senosr_exposure[7].CLK
-iCLK => senosr_exposure[8].CLK
-iCLK => senosr_exposure[9].CLK
-iCLK => senosr_exposure[10].CLK
-iCLK => senosr_exposure[11].CLK
-iCLK => senosr_exposure[12].CLK
-iCLK => senosr_exposure[13].CLK
-iCLK => senosr_exposure[14].CLK
-iCLK => senosr_exposure[15].CLK
-iCLK => iexposure_adj_delay[0].CLK
-iCLK => iexposure_adj_delay[1].CLK
-iCLK => iexposure_adj_delay[2].CLK
-iCLK => iexposure_adj_delay[3].CLK
-iRST_N => i2c_reset.IN1
-iRST_N => combo_cnt[0].ACLR
-iRST_N => combo_cnt[1].ACLR
-iRST_N => combo_cnt[2].ACLR
-iRST_N => combo_cnt[3].ACLR
-iRST_N => combo_cnt[4].ACLR
-iRST_N => combo_cnt[5].ACLR
-iRST_N => combo_cnt[6].ACLR
-iRST_N => combo_cnt[7].ACLR
-iRST_N => combo_cnt[8].ACLR
-iRST_N => combo_cnt[9].ACLR
-iRST_N => combo_cnt[10].ACLR
-iRST_N => combo_cnt[11].ACLR
-iRST_N => combo_cnt[12].ACLR
-iRST_N => combo_cnt[13].ACLR
-iRST_N => combo_cnt[14].ACLR
-iRST_N => combo_cnt[15].ACLR
-iRST_N => combo_cnt[16].ACLR
-iRST_N => combo_cnt[17].ACLR
-iRST_N => combo_cnt[18].ACLR
-iRST_N => combo_cnt[19].ACLR
-iRST_N => combo_cnt[20].ACLR
-iRST_N => combo_cnt[21].ACLR
-iRST_N => combo_cnt[22].ACLR
-iRST_N => combo_cnt[23].ACLR
-iRST_N => combo_cnt[24].ACLR
-iRST_N => senosr_exposure[0].ACLR
-iRST_N => senosr_exposure[1].ACLR
-iRST_N => senosr_exposure[2].ACLR
-iRST_N => senosr_exposure[3].ACLR
-iRST_N => senosr_exposure[4].ACLR
-iRST_N => senosr_exposure[5].ACLR
-iRST_N => senosr_exposure[6].PRESET
-iRST_N => senosr_exposure[7].PRESET
-iRST_N => senosr_exposure[8].ACLR
-iRST_N => senosr_exposure[9].PRESET
-iRST_N => senosr_exposure[10].PRESET
-iRST_N => senosr_exposure[11].ACLR
-iRST_N => senosr_exposure[12].ACLR
-iRST_N => senosr_exposure[13].ACLR
-iRST_N => senosr_exposure[14].ACLR
-iRST_N => senosr_exposure[15].ACLR
-iRST_N => iexposure_adj_delay[0].ACLR
-iRST_N => iexposure_adj_delay[1].ACLR
-iRST_N => iexposure_adj_delay[2].ACLR
-iRST_N => iexposure_adj_delay[3].ACLR
-iZOOM_MODE_SW => ~NO_FANOUT~
-iEXPOSURE_ADJ => iexposure_adj_delay[0].DATAIN
-iEXPOSURE_ADJ => Equal0.IN0
-iEXPOSURE_DEC_p => senosr_exposure_temp[17].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[16].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[15].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[14].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[13].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[12].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[11].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[10].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[9].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[8].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[7].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[6].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[5].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[4].OUTPUTSELECT
-iEXPOSURE_DEC_p => senosr_exposure_temp[3].OUTPUTSELECT
-I2C_SCLK <= I2C_Controller:u0.I2C_SCLK
-I2C_SDAT <> I2C_Controller:u0.I2C_SDAT
-
-
-|DE2_115_CAMERA|I2C_CCD_Config:u8|I2C_Controller:u0
-CLOCK => SD[0].CLK
-CLOCK => SD[1].CLK
-CLOCK => SD[2].CLK
-CLOCK => SD[3].CLK
-CLOCK => SD[4].CLK
-CLOCK => SD[5].CLK
-CLOCK => SD[6].CLK
-CLOCK => SD[7].CLK
-CLOCK => SD[8].CLK
-CLOCK => SD[9].CLK
-CLOCK => SD[10].CLK
-CLOCK => SD[11].CLK
-CLOCK => SD[12].CLK
-CLOCK => SD[13].CLK
-CLOCK => SD[14].CLK
-CLOCK => SD[15].CLK
-CLOCK => SD[16].CLK
-CLOCK => SD[17].CLK
-CLOCK => SD[18].CLK
-CLOCK => SD[19].CLK
-CLOCK => SD[20].CLK
-CLOCK => SD[21].CLK
-CLOCK => SD[22].CLK
-CLOCK => SD[23].CLK
-CLOCK => SD[24].CLK
-CLOCK => SD[25].CLK
-CLOCK => SD[26].CLK
-CLOCK => SD[27].CLK
-CLOCK => SD[28].CLK
-CLOCK => SD[29].CLK
-CLOCK => SD[30].CLK
-CLOCK => SD[31].CLK
-CLOCK => END~reg0.CLK
-CLOCK => ACK4.CLK
-CLOCK => ACK3.CLK
-CLOCK => ACK2.CLK
-CLOCK => ACK1.CLK
-CLOCK => SDO.CLK
-CLOCK => SCLK.CLK
-CLOCK => SD_COUNTER[0].CLK
-CLOCK => SD_COUNTER[1].CLK
-CLOCK => SD_COUNTER[2].CLK
-CLOCK => SD_COUNTER[3].CLK
-CLOCK => SD_COUNTER[4].CLK
-CLOCK => SD_COUNTER[5].CLK
-CLOCK => SD_COUNTER[6].CLK
-CLOCK => comb.DATAB
-I2C_SCLK <= comb.DB_MAX_OUTPUT_PORT_TYPE
-I2C_SDAT <> I2C_SDAT
-I2C_DATA[0] => SD.DATAB
-I2C_DATA[1] => SD.DATAB
-I2C_DATA[2] => SD.DATAB
-I2C_DATA[3] => SD.DATAB
-I2C_DATA[4] => SD.DATAB
-I2C_DATA[5] => SD.DATAB
-I2C_DATA[6] => SD.DATAB
-I2C_DATA[7] => SD.DATAB
-I2C_DATA[8] => SD.DATAB
-I2C_DATA[9] => SD.DATAB
-I2C_DATA[10] => SD.DATAB
-I2C_DATA[11] => SD.DATAB
-I2C_DATA[12] => SD.DATAB
-I2C_DATA[13] => SD.DATAB
-I2C_DATA[14] => SD.DATAB
-I2C_DATA[15] => SD.DATAB
-I2C_DATA[16] => SD.DATAB
-I2C_DATA[17] => SD.DATAB
-I2C_DATA[18] => SD.DATAB
-I2C_DATA[19] => SD.DATAB
-I2C_DATA[20] => SD.DATAB
-I2C_DATA[21] => SD.DATAB
-I2C_DATA[22] => SD.DATAB
-I2C_DATA[23] => SD.DATAB
-I2C_DATA[24] => SD.DATAB
-I2C_DATA[25] => SD.DATAB
-I2C_DATA[26] => SD.DATAB
-I2C_DATA[27] => SD.DATAB
-I2C_DATA[28] => SD.DATAB
-I2C_DATA[29] => SD.DATAB
-I2C_DATA[30] => SD.DATAB
-I2C_DATA[31] => SD.DATAB
-GO => SD_COUNTER.OUTPUTSELECT
-GO => SD_COUNTER.OUTPUTSELECT
-GO => SD_COUNTER.OUTPUTSELECT
-GO => SD_COUNTER.OUTPUTSELECT
-GO => SD_COUNTER.OUTPUTSELECT
-GO => SD_COUNTER.OUTPUTSELECT
-GO => SD_COUNTER.OUTPUTSELECT
-END <= END~reg0.DB_MAX_OUTPUT_PORT_TYPE
-W_R => ~NO_FANOUT~
-ACK <= comb.DB_MAX_OUTPUT_PORT_TYPE
-RESET => END~reg0.PRESET
-RESET => ACK4.ACLR
-RESET => ACK3.ACLR
-RESET => ACK2.ACLR
-RESET => ACK1.ACLR
-RESET => SDO.PRESET
-RESET => SCLK.PRESET
-RESET => SD_COUNTER[0].PRESET
-RESET => SD_COUNTER[1].PRESET
-RESET => SD_COUNTER[2].PRESET
-RESET => SD_COUNTER[3].PRESET
-RESET => SD_COUNTER[4].PRESET
-RESET => SD_COUNTER[5].PRESET
-RESET => SD_COUNTER[6].ACLR
-RESET => SD[0].ENA
-RESET => SD[31].ENA
-RESET => SD[30].ENA
-RESET => SD[29].ENA
-RESET => SD[28].ENA
-RESET => SD[27].ENA
-RESET => SD[26].ENA
-RESET => SD[25].ENA
-RESET => SD[24].ENA
-RESET => SD[23].ENA
-RESET => SD[22].ENA
-RESET => SD[21].ENA
-RESET => SD[20].ENA
-RESET => SD[19].ENA
-RESET => SD[18].ENA
-RESET => SD[17].ENA
-RESET => SD[16].ENA
-RESET => SD[15].ENA
-RESET => SD[14].ENA
-RESET => SD[13].ENA
-RESET => SD[12].ENA
-RESET => SD[11].ENA
-RESET => SD[10].ENA
-RESET => SD[9].ENA
-RESET => SD[8].ENA
-RESET => SD[7].ENA
-RESET => SD[6].ENA
-RESET => SD[5].ENA
-RESET => SD[4].ENA
-RESET => SD[3].ENA
-RESET => SD[2].ENA
-RESET => SD[1].ENA
-
-
-|DE2_115_CAMERA|VGA_Controller:u1
+|DE2_115_CAMERA|VGA_Controller:u9
 iRed[0] => mVGA_R[0].DATAB
 iRed[1] => mVGA_R[1].DATAB
 iRed[2] => mVGA_R[2].DATAB
@@ -7977,196 +8153,5 @@ iRST_N => H_Cont[10].ACLR
 iRST_N => H_Cont[11].ACLR
 iRST_N => H_Cont[12].ACLR
 iZOOM_MODE_SW => ~NO_FANOUT~
-
-
-|DE2_115_CAMERA|RGB2GRAY:u9
-oDVAL <= oDVAL~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[0] <= oDATA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[1] <= oDATA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[2] <= oDATA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[3] <= oDATA[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[4] <= oDATA[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[5] <= oDATA[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[6] <= oDATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[7] <= oDATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[8] <= oDATA[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[9] <= oDATA[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oFlag <= tempFlag.DB_MAX_OUTPUT_PORT_TYPE
-iRed[0] => Add0.IN10
-iRed[1] => Add0.IN9
-iRed[2] => Add0.IN8
-iRed[3] => Add0.IN7
-iRed[4] => Add0.IN6
-iRed[5] => Add0.IN5
-iRed[6] => Add0.IN4
-iRed[7] => Add0.IN3
-iRed[8] => Add0.IN2
-iRed[9] => Add0.IN1
-iGreen[0] => Add0.IN20
-iGreen[1] => Add0.IN19
-iGreen[2] => Add0.IN18
-iGreen[3] => Add0.IN17
-iGreen[4] => Add0.IN16
-iGreen[5] => Add0.IN15
-iGreen[6] => Add0.IN14
-iGreen[7] => Add0.IN13
-iGreen[8] => Add0.IN12
-iGreen[9] => Add0.IN11
-iBlue[0] => Add1.IN22
-iBlue[1] => Add1.IN21
-iBlue[2] => Add1.IN20
-iBlue[3] => Add1.IN19
-iBlue[4] => Add1.IN18
-iBlue[5] => Add1.IN17
-iBlue[6] => Add1.IN16
-iBlue[7] => Add1.IN15
-iBlue[8] => Add1.IN14
-iBlue[9] => Add1.IN13
-iCLK => oDVAL~reg0.CLK
-iCLK => tempFlag.CLK
-iCLK => counter[0].CLK
-iCLK => counter[1].CLK
-iCLK => counter[2].CLK
-iCLK => counter[3].CLK
-iCLK => counter[4].CLK
-iCLK => counter[5].CLK
-iCLK => counter[6].CLK
-iCLK => counter[7].CLK
-iCLK => counter[8].CLK
-iCLK => counter[9].CLK
-iCLK => counter[10].CLK
-iCLK => counter[11].CLK
-iCLK => counter[12].CLK
-iCLK => counter[13].CLK
-iCLK => counter[14].CLK
-iCLK => counter[15].CLK
-iCLK => counter[16].CLK
-iCLK => counter[17].CLK
-iCLK => counter[18].CLK
-iCLK => counter[19].CLK
-iCLK => counter[20].CLK
-iCLK => oDATA[0]~reg0.CLK
-iCLK => oDATA[1]~reg0.CLK
-iCLK => oDATA[2]~reg0.CLK
-iCLK => oDATA[3]~reg0.CLK
-iCLK => oDATA[4]~reg0.CLK
-iCLK => oDATA[5]~reg0.CLK
-iCLK => oDATA[6]~reg0.CLK
-iCLK => oDATA[7]~reg0.CLK
-iCLK => oDATA[8]~reg0.CLK
-iCLK => oDATA[9]~reg0.CLK
-iRST => oDVAL~reg0.ACLR
-iRST => tempFlag.ACLR
-iRST => counter[0].ACLR
-iRST => counter[1].ACLR
-iRST => counter[2].ACLR
-iRST => counter[3].ACLR
-iRST => counter[4].ACLR
-iRST => counter[5].ACLR
-iRST => counter[6].ACLR
-iRST => counter[7].ACLR
-iRST => counter[8].ACLR
-iRST => counter[9].ACLR
-iRST => counter[10].ACLR
-iRST => counter[11].ACLR
-iRST => counter[12].ACLR
-iRST => counter[13].ACLR
-iRST => counter[14].ACLR
-iRST => counter[15].ACLR
-iRST => counter[16].ACLR
-iRST => counter[17].ACLR
-iRST => counter[18].ACLR
-iRST => counter[19].ACLR
-iRST => counter[20].ACLR
-iRST => oDATA[0]~reg0.ACLR
-iRST => oDATA[1]~reg0.ACLR
-iRST => oDATA[2]~reg0.ACLR
-iRST => oDATA[3]~reg0.ACLR
-iRST => oDATA[4]~reg0.ACLR
-iRST => oDATA[5]~reg0.ACLR
-iRST => oDATA[6]~reg0.ACLR
-iRST => oDATA[7]~reg0.ACLR
-iRST => oDATA[8]~reg0.ACLR
-iRST => oDATA[9]~reg0.ACLR
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => oDATA.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => counter.OUTPUTSELECT
-iDVAL => tempFlag.OUTPUTSELECT
-iDVAL => oDVAL~reg0.DATAIN
-
-
-|DE2_115_CAMERA|GRAY2BINARY:u10
-oDVAL <= oDVAL~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[0] <= oDATA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[1] <= oDATA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[2] <= oDATA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[3] <= oDATA[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[4] <= oDATA[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[5] <= oDATA[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[6] <= oDATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[7] <= oDATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[8] <= oDATA[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oDATA[9] <= oDATA[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-iDATA[0] => LessThan0.IN20
-iDATA[1] => LessThan0.IN19
-iDATA[2] => LessThan0.IN18
-iDATA[3] => LessThan0.IN17
-iDATA[4] => LessThan0.IN16
-iDATA[5] => LessThan0.IN15
-iDATA[6] => LessThan0.IN14
-iDATA[7] => LessThan0.IN13
-iDATA[8] => LessThan0.IN12
-iDATA[9] => LessThan0.IN11
-iCLK => oDATA[0]~reg0.CLK
-iCLK => oDATA[1]~reg0.CLK
-iCLK => oDATA[2]~reg0.CLK
-iCLK => oDATA[3]~reg0.CLK
-iCLK => oDATA[4]~reg0.CLK
-iCLK => oDATA[5]~reg0.CLK
-iCLK => oDATA[6]~reg0.CLK
-iCLK => oDATA[7]~reg0.CLK
-iCLK => oDATA[8]~reg0.CLK
-iCLK => oDATA[9]~reg0.CLK
-iCLK => oDVAL~reg0.CLK
-iRST => oDATA[0]~reg0.ACLR
-iRST => oDATA[1]~reg0.ACLR
-iRST => oDATA[2]~reg0.ACLR
-iRST => oDATA[3]~reg0.ACLR
-iRST => oDATA[4]~reg0.ACLR
-iRST => oDATA[5]~reg0.ACLR
-iRST => oDATA[6]~reg0.ACLR
-iRST => oDATA[7]~reg0.ACLR
-iRST => oDATA[8]~reg0.ACLR
-iRST => oDATA[9]~reg0.ACLR
-iRST => oDVAL~reg0.ACLR
-iDVAL => oDVAL~reg0.DATAIN
 
 

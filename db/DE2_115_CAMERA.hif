@@ -50,7 +50,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-Reset_Delay:u2
+Reset_Delay:u0
 }
 # macro_sequence
 
@@ -805,7 +805,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-SEG7_LUT_8:u5
+SEG7_LUT_8:u4
 }
 # macro_sequence
 
@@ -841,14 +841,14 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-SEG7_LUT_8:u5|SEG7_LUT:u0
-SEG7_LUT_8:u5|SEG7_LUT:u1
-SEG7_LUT_8:u5|SEG7_LUT:u2
-SEG7_LUT_8:u5|SEG7_LUT:u3
-SEG7_LUT_8:u5|SEG7_LUT:u4
-SEG7_LUT_8:u5|SEG7_LUT:u5
-SEG7_LUT_8:u5|SEG7_LUT:u6
-SEG7_LUT_8:u5|SEG7_LUT:u7
+SEG7_LUT_8:u4|SEG7_LUT:u0
+SEG7_LUT_8:u4|SEG7_LUT:u1
+SEG7_LUT_8:u4|SEG7_LUT:u2
+SEG7_LUT_8:u4|SEG7_LUT:u3
+SEG7_LUT_8:u4|SEG7_LUT:u4
+SEG7_LUT_8:u4|SEG7_LUT:u5
+SEG7_LUT_8:u4|SEG7_LUT:u6
+SEG7_LUT_8:u4|SEG7_LUT:u7
 }
 # macro_sequence
 
@@ -884,7 +884,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-sdram_pll:u6
+sdram_pll:u5
 }
 # macro_sequence
 
@@ -2417,7 +2417,7 @@ clkena
 2
 }
 # hierarchies {
-sdram_pll:u6|altpll:altpll_component
+sdram_pll:u5|altpll:altpll_component
 }
 # macro_sequence
 
@@ -2456,7 +2456,7 @@ clk0
 3
 }
 # hierarchies {
-sdram_pll:u6|altpll:altpll_component|altpll_f423:auto_generated
+sdram_pll:u5|altpll:altpll_component|altpll_f423:auto_generated
 }
 # macro_sequence
 
@@ -2538,7 +2538,7 @@ sdram_control|sdram_params.h
 f55f246d17f3eccc5ee2da8f978686a2
 }
 # hierarchies {
-Sdram_Control:u7
+Sdram_Control:u6
 }
 # macro_sequence
 DIOSIZE16      ASIZE23      ASIZE23      DIOSIZE16      ASIZE23      ASIZE23      DIOSIZE16      ASIZE23      ASIZE23      DIOSIZE16      ASIZE23      ASIZE23      DSIZE32      DSIZE32      ASIZE23      ASIZE23      ASIZE23      ASIZE23      ASIZE23      ASIZE23      ASIZE23      ASIZE23      ASIZE23      DSIZE32      DSIZE32      DSIZE32      DSIZE32      DSIZE32      DSIZE32      DSIZE32      ASIZE23      DSIZE32      
@@ -2620,7 +2620,7 @@ sdram_control|sdram_params.h
 f55f246d17f3eccc5ee2da8f978686a2
 }
 # hierarchies {
-Sdram_Control:u7|control_interface:u_control_interface
+Sdram_Control:u6|control_interface:u_control_interface
 }
 # macro_sequence
 ASIZE23      ASIZE23      ASIZE23      
@@ -2702,7 +2702,7 @@ sdram_control|sdram_params.h
 f55f246d17f3eccc5ee2da8f978686a2
 }
 # hierarchies {
-Sdram_Control:u7|command:u_command
+Sdram_Control:u6|command:u_command
 }
 # macro_sequence
 ASIZE23      ROWSIZE12COLSIZE8BANKSIZE2ROWSTART8          ROWSIZE12ROWSTART8          COLSTART0COLSIZE8COLSTART0BANKSTART20BANKSIZE2BANKSTART20ASIZE23      ASIZE23      
@@ -2784,7 +2784,7 @@ sdram_control|sdram_params.h
 f55f246d17f3eccc5ee2da8f978686a2
 }
 # hierarchies {
-Sdram_Control:u7|sdr_data_path:u_sdr_data_path
+Sdram_Control:u6|sdr_data_path:u_sdr_data_path
 }
 # macro_sequence
 DSIZE32      DSIZE32      DSIZE32      DSIZE32      DSIZE32      DSIZE32      
@@ -2820,8 +2820,8 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo
 }
 # macro_sequence
 ALTERA_RESERVED_QISALTERA_RESERVED_QIS
@@ -2949,8 +2949,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 }
 # macro_sequence
 
@@ -3151,8 +3151,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated
 }
 # macro_sequence
 
@@ -3224,14 +3224,14 @@ bin0
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:wrptr_g_gray2bin
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_gray2bin_ugb:ws_dgrp_gray2bin
 }
 # macro_sequence
 
@@ -3285,8 +3285,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_t57:rdptr_g1p
 }
 # macro_sequence
 
@@ -3340,8 +3340,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|a_graycounter_ojc:wrptr_g1p
 }
 # macro_sequence
 
@@ -3572,8 +3572,8 @@ aclr1
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|altsyncram_rj31:fifo_ram
 }
 # macro_sequence
 
@@ -3651,14 +3651,14 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_brp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|dffpipe_gd9:rs_bwp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_brp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|dffpipe_gd9:ws_bwp
 }
 # macro_sequence
 
@@ -3736,8 +3736,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp
 }
 # macro_sequence
 
@@ -3815,8 +3815,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_ikd:rs_dgwp|dffpipe_hd9:dffpipe13
 }
 # macro_sequence
 
@@ -3894,8 +3894,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp
 }
 # macro_sequence
 
@@ -3973,8 +3973,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|alt_synch_pipe_jkd:ws_dgrp|dffpipe_id9:dffpipe16
 }
 # macro_sequence
 
@@ -4049,14 +4049,14 @@ aeb
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:rdempty_eq_comp
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cmpr_f66:wrfull_eq_comp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:rdempty_eq_comp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cmpr_f66:wrfull_eq_comp
 }
 # macro_sequence
 
@@ -4089,10 +4089,10 @@ aset
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
-Sdram_Control:u7|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
+Sdram_Control:u6|Sdram_WR_FIFO:u_write1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
+Sdram_Control:u6|Sdram_WR_FIFO:u_write2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_lhh1:auto_generated|cntr_54e:cntr_b
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|cntr_54e:cntr_b
 }
 # macro_sequence
 
@@ -4128,8 +4128,8 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo
 }
 # macro_sequence
 ALTERA_RESERVED_QISALTERA_RESERVED_QIS
@@ -4257,8 +4257,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 }
 # macro_sequence
 
@@ -4459,8 +4459,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated
 }
 # macro_sequence
 
@@ -4514,8 +4514,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_s57:rdptr_g1p
 }
 # macro_sequence
 
@@ -4569,8 +4569,8 @@ aclr
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|a_graycounter_pjc:wrptr_g1p
 }
 # macro_sequence
 
@@ -4801,8 +4801,8 @@ aclr1
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|altsyncram_sj31:fifo_ram
 }
 # macro_sequence
 
@@ -4880,8 +4880,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp
 }
 # macro_sequence
 
@@ -4959,8 +4959,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_kkd:rs_dgwp|dffpipe_jd9:dffpipe12
 }
 # macro_sequence
 
@@ -5038,8 +5038,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp
 }
 # macro_sequence
 
@@ -5117,8 +5117,8 @@ clock
 3
 }
 # hierarchies {
-Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
-Sdram_Control:u7|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
+Sdram_Control:u6|Sdram_RD_FIFO:u_read1_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
+Sdram_Control:u6|Sdram_RD_FIFO:u_read2_fifo|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_dih1:auto_generated|alt_synch_pipe_lkd:ws_dgrp|dffpipe_kd9:dffpipe15
 }
 # macro_sequence
 
@@ -5154,7 +5154,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-I2C_CCD_Config:u8|I2C_Controller:u0
+I2C_CCD_Config:u1|I2C_Controller:u0
 }
 # macro_sequence
 
@@ -5279,7 +5279,7 @@ clken
 3
 }
 # hierarchies {
-RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component
+RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component
 }
 # macro_sequence
 
@@ -5447,7 +5447,7 @@ clken
 3
 }
 # hierarchies {
-RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated
+RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated
 }
 # macro_sequence
 
@@ -5684,7 +5684,7 @@ wren_a
 2
 }
 # hierarchies {
-RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|altsyncram_rma1:altsyncram2
+RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|altsyncram_rma1:altsyncram2
 }
 # macro_sequence
 
@@ -5741,7 +5741,7 @@ clk_en
 3
 }
 # hierarchies {
-RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1
+RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1
 }
 # macro_sequence
 
@@ -5828,7 +5828,7 @@ aeb
 3
 }
 # hierarchies {
-RAW2RGB:u4|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1|cmpr_8ic:cmpr4
+RAW2RGB:u3|Line_Buffer1:u0|altshift_taps:altshift_taps_component|shift_taps_mds:auto_generated|cntr_lvf:cntr1|cmpr_8ic:cmpr4
 }
 # macro_sequence
 
@@ -6348,48 +6348,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 VGA_640x480p601
 # end
 # entity
-CCD_Capture
-# storage
-db|DE2_115_CAMERA.(3).cnf
-db|DE2_115_CAMERA.(3).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|ccd_capture.v
-5b897c51c4168e944360d810b28ec2a
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-COLUMN_WIDTH
-1280
-PARAMETER_SIGNED_DEC
-DEF
-}
-# hierarchies {
-CCD_Capture:u3
-}
-# macro_sequence
-
-# end
-# entity
 Line_Buffer1
 # storage
 db|DE2_115_CAMERA.(60).cnf
@@ -6420,7 +6378,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-RAW2RGB:u4|Line_Buffer1:u0
+RAW2RGB:u3|Line_Buffer1:u0
 }
 # macro_sequence
 ALTERA_RESERVED_QISALTERA_RESERVED_QIS
@@ -7064,247 +7022,6 @@ denom0
 
 # end
 # entity
-RGB2GRAY
-# storage
-db|DE2_115_CAMERA.(64).cnf
-db|DE2_115_CAMERA.(64).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|rgb2gray.v
-dfa3d5d6596646802537dc66e295fa
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-RGB2GRAY:u9
-}
-# macro_sequence
-
-# end
-# entity
-GRAY2BINARY
-# storage
-db|DE2_115_CAMERA.(71).cnf
-db|DE2_115_CAMERA.(71).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|gray2binary.v
-a9a726237158ec1dc72e686277023aa
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-threshold
-0111110100
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# hierarchies {
-GRAY2BINARY:u10
-}
-# macro_sequence
-
-# end
-# entity
-I2C_CCD_Config
-# storage
-db|DE2_115_CAMERA.(62).cnf
-db|DE2_115_CAMERA.(62).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|i2c_ccd_config.v
-7a64c5650f927d7d32c862fe111768
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-default_exposure
-0000011011000000
-PARAMETER_UNSIGNED_BIN
-DEF
-exposure_change_value
-0000000011001000
-PARAMETER_UNSIGNED_BIN
-DEF
-CLK_Freq
-50000000
-PARAMETER_SIGNED_DEC
-DEF
-I2C_Freq
-20000
-PARAMETER_SIGNED_DEC
-DEF
-LUT_SIZE
-25
-PARAMETER_SIGNED_DEC
-DEF
-}
-# hierarchies {
-I2C_CCD_Config:u8
-}
-# macro_sequence
-
-# end
-# entity
-RAW2RGB
-# storage
-db|DE2_115_CAMERA.(43).cnf
-db|DE2_115_CAMERA.(43).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|raw2rgb.v
-47a99fc05c23331eaea92edd9d8740
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-RAW2RGB:u4
-}
-# macro_sequence
-
-# end
-# entity
-Image_Crop
-# storage
-db|DE2_115_CAMERA.(73).cnf
-db|DE2_115_CAMERA.(73).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-v|image_crop.v
-fd1eb56c49bc80fbc922432df371777
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# macro_sequence
-
-# end
-# entity
-DE2_115_CAMERA
-# storage
-db|DE2_115_CAMERA.(0).cnf
-db|DE2_115_CAMERA.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-de2_115_camera.v
-aaf15fbc19e54e6d1650db91ef2fa46
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 VGA_Controller
 # storage
 db|DE2_115_CAMERA.(63).cnf
@@ -7385,7 +7102,892 @@ PARAMETER_SIGNED_DEC
 DEF
 }
 # hierarchies {
-VGA_Controller:u1
+VGA_Controller:u9
+}
+# macro_sequence
+
+# end
+# entity
+CCD_Capture
+# storage
+db|DE2_115_CAMERA.(3).cnf
+db|DE2_115_CAMERA.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|ccd_capture.v
+5b897c51c4168e944360d810b28ec2a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+COLUMN_WIDTH
+1280
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+CCD_Capture:u2
+}
+# macro_sequence
+
+# end
+# entity
+I2C_CCD_Config
+# storage
+db|DE2_115_CAMERA.(62).cnf
+db|DE2_115_CAMERA.(62).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|i2c_ccd_config.v
+7a64c5650f927d7d32c862fe111768
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+default_exposure
+0000011011000000
+PARAMETER_UNSIGNED_BIN
+DEF
+exposure_change_value
+0000000011001000
+PARAMETER_UNSIGNED_BIN
+DEF
+CLK_Freq
+50000000
+PARAMETER_SIGNED_DEC
+DEF
+I2C_Freq
+20000
+PARAMETER_SIGNED_DEC
+DEF
+LUT_SIZE
+25
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+I2C_CCD_Config:u1
+}
+# macro_sequence
+
+# end
+# entity
+lpm_divide
+# storage
+db|DE2_115_CAMERA.(73).cnf
+db|DE2_115_CAMERA.(73).cnf
+# case_insensitive
+# source_file
+|altera|10.0|quartus|libraries|megafunctions|lpm_divide.tdf
+b81d72a497fd388e8a45f25f43652bd1
+7
+# user_parameter {
+LPM_WIDTHN
+14
+PARAMETER_UNKNOWN
+USR
+LPM_WIDTHD
+2
+PARAMETER_UNKNOWN
+USR
+LPM_NREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_DREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_REMAINDERPOSITIVE
+TRUE
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_divide_uim
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+OPTIMIZE_FOR_SPEED
+5
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+numer9
+-1
+3
+numer8
+-1
+3
+numer7
+-1
+3
+numer6
+-1
+3
+numer5
+-1
+3
+numer4
+-1
+3
+numer3
+-1
+3
+numer2
+-1
+3
+numer13
+-1
+3
+numer12
+-1
+3
+numer11
+-1
+3
+numer10
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+denom1
+-1
+2
+denom0
+-1
+2
+}
+# macro_sequence
+
+# end
+# entity
+lpm_divide_uim
+# storage
+db|DE2_115_CAMERA.(74).cnf
+db|DE2_115_CAMERA.(74).cnf
+# case_insensitive
+# source_file
+db|lpm_divide_uim.tdf
+94e72f39573db1a83abd4828faa24319
+7
+# used_port {
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient13
+-1
+3
+quotient12
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numer9
+-1
+3
+numer8
+-1
+3
+numer7
+-1
+3
+numer6
+-1
+3
+numer5
+-1
+3
+numer4
+-1
+3
+numer3
+-1
+3
+numer2
+-1
+3
+numer13
+-1
+3
+numer12
+-1
+3
+numer11
+-1
+3
+numer10
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+denom1
+-1
+3
+denom0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+sign_div_unsign_mlh
+# storage
+db|DE2_115_CAMERA.(75).cnf
+db|DE2_115_CAMERA.(75).cnf
+# case_insensitive
+# source_file
+db|sign_div_unsign_mlh.tdf
+b0f466a77b2176fc11d58ceb52629018
+7
+# used_port {
+remainder1
+-1
+3
+remainder0
+-1
+3
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient13
+-1
+3
+quotient12
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numerator9
+-1
+3
+numerator8
+-1
+3
+numerator7
+-1
+3
+numerator6
+-1
+3
+numerator5
+-1
+3
+numerator4
+-1
+3
+numerator3
+-1
+3
+numerator2
+-1
+3
+numerator13
+-1
+3
+numerator12
+-1
+3
+numerator11
+-1
+3
+numerator10
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+alt_u_div_07f
+# storage
+db|DE2_115_CAMERA.(76).cnf
+db|DE2_115_CAMERA.(76).cnf
+# case_insensitive
+# source_file
+db|alt_u_div_07f.tdf
+fdf68660b3a627884f62dc66be199f4e
+7
+# used_port {
+remainder1
+-1
+3
+remainder0
+-1
+3
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient13
+-1
+3
+quotient12
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numerator9
+-1
+3
+numerator8
+-1
+3
+numerator7
+-1
+3
+numerator6
+-1
+3
+numerator5
+-1
+3
+numerator4
+-1
+3
+numerator3
+-1
+3
+numerator2
+-1
+3
+numerator13
+-1
+3
+numerator12
+-1
+3
+numerator11
+-1
+3
+numerator10
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+RGB2GRAY
+# storage
+db|DE2_115_CAMERA.(64).cnf
+db|DE2_115_CAMERA.(64).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|rgb2gray.v
+3965ee831ee794321ec141b19db3e7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+RGB2GRAY:u7
+}
+# macro_sequence
+
+# end
+# entity
+RAW2RGB
+# storage
+db|DE2_115_CAMERA.(43).cnf
+db|DE2_115_CAMERA.(43).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|raw2rgb.v
+4611d481f3451d765fec152cf7141b9b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+RAW2RGB:u3
+}
+# macro_sequence
+
+# end
+# entity
+lpm_divide
+# storage
+db|DE2_115_CAMERA.(77).cnf
+db|DE2_115_CAMERA.(77).cnf
+# case_insensitive
+# source_file
+|altera|10.0|quartus|libraries|megafunctions|lpm_divide.tdf
+b81d72a497fd388e8a45f25f43652bd1
+7
+# user_parameter {
+LPM_WIDTHN
+14
+PARAMETER_UNKNOWN
+USR
+LPM_WIDTHD
+2
+PARAMETER_UNKNOWN
+USR
+LPM_NREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_DREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_REMAINDERPOSITIVE
+TRUE
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_divide_uim
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+OPTIMIZE_FOR_SPEED
+5
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numer9
+-1
+3
+numer8
+-1
+3
+numer7
+-1
+3
+numer6
+-1
+3
+numer5
+-1
+3
+numer4
+-1
+3
+numer3
+-1
+3
+numer2
+-1
+3
+numer13
+-1
+3
+numer12
+-1
+3
+numer11
+-1
+3
+numer10
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+denom1
+-1
+2
+denom0
+-1
+2
+}
+# macro_sequence
+
+# end
+# entity
+DE2_115_CAMERA
+# storage
+db|DE2_115_CAMERA.(0).cnf
+db|DE2_115_CAMERA.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+de2_115_camera.v
+4b5ceb94bb92988b408a851d48f855a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+GRAY2BINARY
+# storage
+db|DE2_115_CAMERA.(71).cnf
+db|DE2_115_CAMERA.(71).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+v|gray2binary.v
+06c8422e828c8bebb9157bc7812ef0
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+threshold
+011000001011
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+GRAY2BINARY:u8
 }
 # macro_sequence
 
