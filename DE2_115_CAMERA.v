@@ -497,7 +497,6 @@ RAW2RGB				u3	(
               .iY_Cont(Y_Cont)
 						);
 
-//GRAYSCALE
 wire [11:0]wVGA_R ;
 wire [11:0]wVGA_G ;
 wire [11:0]wVGA_B ;
@@ -505,14 +504,14 @@ wire [11:0]wVGA_B ;
 wire gCCD_DVAL;
 wire [11:0] gDATA;
 
-RGB2GRAY 			u7(
+RGB2GRAY 			u4(
         .oDVAL(gCCD_DVAL),
         .oDATA(gDATA),
         .iRed(wVGA_R),
         .iGreen(wVGA_G),
         .iBlue(wVGA_B),
         .iCLK(D5M_PIXLCLK),
-        .iRST(DLY_RST_2),
+        .iRST(DLY_RST_1),
         .iDVAL(sCCD_DVAL)
 		);
 
@@ -528,7 +527,7 @@ assign wDISP_B =SW[1] ? gDATA:wVGA_B;
 wire bCCD_DVAL;
 wire [11:0]bDATA;
 
-GRAY2BINARY			u8(
+GRAY2BINARY			u5(
         .oDVAL(bCCD_DVAL),
         .oDATA(bDATA),
         .iDATA(gDATA),
@@ -545,16 +544,22 @@ assign bDISP_R =SW[2] ? bDATA:wDISP_R;
 assign bDISP_G =SW[2] ? bDATA:wDISP_G;
 assign bDISP_B =SW[2] ? bDATA:wDISP_B;
 
+
 //Frame count display
-SEG7_LUT_8 			u4	(
-              .oSEG0(HEX0),.oSEG1(HEX1),
-              .oSEG2(HEX2),.oSEG3(HEX3),
-              .oSEG4(HEX4),.oSEG5(HEX5),
-              .oSEG6(HEX6),.oSEG7(HEX7),
-              .iDIG(Frame_Cont[31:0])
+SEG7_LUT_8 			u6	( .oSEG0(HEX5),
+                      .oSEG1(HEX6),
+                      .oSEG2(HEX7),
+                      .iDIG(cYSTART)
 						);
 
-sdram_pll 			u5	(
+SEG7_LUT_8 			u7	( .oSEG0(HEX0),
+                      .oSEG1(HEX1),
+                      .oSEG2(HEX2),
+                      .iDIG(cXSTART)
+						);
+
+
+sdram_pll 			u8	(
               .inclk0(CLOCK2_50),
               .c0(sdram_ctrl_clk),
               .c1(DRAM_CLK),
@@ -563,7 +568,7 @@ sdram_pll 			u5	(
 						);
 
 //SDRam Read and Write as Frame Buffer
-Sdram_Control	u6	(	//	HOST Side
+Sdram_Control	u9	(	//	HOST Side
               .RESET_N(KEY[0]),
               .CLK(sdram_ctrl_clk),
 
@@ -589,7 +594,7 @@ Sdram_Control	u6	(	//	HOST Side
               .RD1_DATA(Read_DATA1),
               .RD1(Read),
               .RD1_ADDR(0),
-              .RD1_MAX_ADDR(640*480/2),
+              .RD1_MAX_ADDR(640*480/2),//0x25800
               .RD1_LENGTH(8'h50),
               .RD1_LOAD(!DLY_RST_0),
               .RD1_CLK(~VGA_CTRL_CLK),
@@ -615,22 +620,104 @@ Sdram_Control	u6	(	//	HOST Side
               .DQM(DRAM_DQM)
 						);
 
+wire [9:0]SD_DATA_R ;
+wire [9:0]SD_DATA_G ;
+wire [9:0]SD_DATA_B ;
 
-wire [9:0]SD_VGA_R ;
-wire [9:0]SD_VGA_G ;
-wire [9:0]SD_VGA_B ;            
-            
-assign SD_VGA_R = Read_DATA2[9:0];
-assign SD_VGA_G = {Read_DATA1[14:10],Read_DATA2[14:10]};
-assign SD_VGA_B = Read_DATA1[9:0];
+assign SD_DATA_R = Read_DATA2[9:0];
+assign SD_DATA_G = {Read_DATA1[14:10],Read_DATA2[14:10]};
+assign SD_DATA_B = Read_DATA1[9:0];
 
+//Crop image possition
+wire  ysDVAL;
+wire  xsDVAL;
+wire  xeDVAL;
+wire  yeDVAL;
+wire  [15:0]XSTART;
+wire  [15:0]XEND;
+wire  [15:0]YSTART;
+wire  [15:0]YEND;
+
+CROP_YSTART u10(
+    .oDVAL(ysDVAL),
+    .oYSTART(YSTART),
+    .iDATA(SD_DATA_R),
+    .iCLK(VGA_CTRL_CLK),
+    .iRST(DLY_RST_2),
+    .iDVAL(Read)
+		);
+
+CROP_XSTART u11(
+        .oDVAL(xsDVAL),
+        .oXSTART(XSTART),
+        .iDATA(SD_DATA_R),
+        .iCLK(VGA_CTRL_CLK),
+        .iRST(DLY_RST_2),
+        .iDVAL(Read)
+		);
+
+CROP_XEND u12(
+        .oDVAL(xeDVAL),
+        .oXEND(XEND),
+        .iDATA(SD_DATA_R),
+        .iCLK(VGA_CTRL_CLK),
+        .iRST(DLY_RST_2),
+        .iDVAL(Read)
+		);
+
+CROP_YEND u13(
+        .oDVAL(yeDVAL),
+        .oYEND(YEND),
+        .iDATA(SD_DATA_R),
+        .iCLK(VGA_CTRL_CLK),
+        .iRST(DLY_RST_2),
+        .iDVAL(Read)
+		);
+
+
+//Image Crop
+wire cDVAL;
+wire [9:0]cDATA;
+wire [15:0]cXSTART;
+wire [15:0]cXEND;
+wire [15:0]cYSTART;
+wire [15:0]cYEND;
+
+assign cXSTART=SW[3]?XSTART:0;
+assign cXEND  =SW[3]?XEND  :0;
+assign cYSTART=SW[3]?YSTART:0;
+assign cYEND  =SW[3]?YEND  :0;
+
+IMAGE_CROP u14(
+      .oDVAL(cDVAL),
+      .oDATA(cDATA),
+      .iXSTART(cXSTART),
+      .iXEND(cXEND),
+      .iYSTART(cYSTART),
+      .iYEND(cYEND),
+      .iDATA(SD_DATA_R),
+      .iCLK(VGA_CTRL_CLK),
+      .iRST(DLY_RST_2),
+      .iDVAL(Read)
+		);
+
+wire [9:0]cVGA_R;
+wire [9:0]cVGA_G;
+wire [9:0]cVGA_B;
+
+assign cVGA_R = SW[4] ? cDATA:SD_DATA_R;
+assign cVGA_G = SW[4] ? cDATA:SD_DATA_G;
+assign cVGA_B = SW[4] ? cDATA:SD_DATA_B;
+
+wire	[12:0] oH_Cont;
+wire	[12:0] oV_Cont;
 
 //VGA DISPLAY
-VGA_Controller		u9	(	//	Host Side
+VGA_Controller		u15	(	//	Host Side
 							.oRequest(Read),
-							.iRed  (SD_VGA_R),
-							.iGreen(SD_VGA_G),
-							.iBlue (SD_VGA_B),
+							.iRed  (cVGA_R),
+							.iGreen(cVGA_G),
+							.iBlue (cVGA_B),
 							//	VGA Side
 							.oVGA_R(oVGA_R),
 							.oVGA_G(oVGA_G),
@@ -639,11 +726,78 @@ VGA_Controller		u9	(	//	Host Side
 							.oVGA_V_SYNC(VGA_VS),
 							.oVGA_SYNC(VGA_SYNC_N),
 							.oVGA_BLANK(VGA_BLANK_N),
+							//Coordinate
+							.oH_Cont(oH_Cont),
+							.oV_Cont(oV_Cont),
 							//	Control Signal
 							.iCLK(VGA_CTRL_CLK),
 							.iRST_N(DLY_RST_2),
-							.iZOOM_MODE_SW(SW[16])
 						);
+
+
+wire			            I2C_END;
+wire					      AUD_CTRL_CLK;
+
+//  TV DECODER ENABLE
+assign TD_RESET_N =1'b1;
+
+//  I2C
+	I2C_AV_Config 		u16	(	//	Host Side
+								 .iCLK		( CLOCK_50),
+								 .iRST_N		( KEY[0] ),
+								 .o_I2C_END	( I2C_END ),
+								 //	I2C Side
+								 .I2C_SCLK	( I2C_SCLK ),
+								 .I2C_SDAT	( I2C_SDAT )
+								);
+
+
+//	AUDIO SOUND
+	assign	AUD_ADCLRCK	=	AUD_DACLRCK;
+	assign	AUD_XCK	   =	AUD_CTRL_CLK;
+
+//  AUDIO PLL
+	VGA_Audio_PLL 	u17	(
+							 .areset ( ~I2C_END ),
+							 .inclk0 ( TD_CLK27 ),
+							 .c1		( AUD_CTRL_CLK )
+							);
+
+// Music Synthesizer Block //
+
+////////////Sound Select/////////////
+
+	wire [15:0]	sound1;
+	wire [15:0]	sound2;
+	wire 			sound_off1;
+	wire 			sound_off2;
+
+	wire [7:0]sound_code1 = 8'h33;
+
+	staff st1(
+			 // Key code-in //
+			 .scan_code1		( sound_code1 ),
+			 //Sound Output to Audio Generater//
+			 .sound1				( sound1 ),
+			 .sound_off1		( sound_off1 ),
+	      );
+
+// 2CH Audio Sound output -- Audio Generater //
+
+	adio_codec ad1	(
+					// AUDIO CODEC //
+					.oAUD_BCK 	( AUD_BCLK ),
+					.oAUD_DATA	( AUD_DACDAT ),
+					.oAUD_LRCK	( AUD_DACLRCK ),
+					.iCLK_18_4	( AUD_CTRL_CLK ),
+					// KEY //
+					.iRST_N	  	( KEY[0] ),
+					.iSrc_Select( 2'b00 ),
+					// Sound Control //
+					.key1_on	( SW[5] & sound_off1 ),//CH1 ON / OFF
+					.sound1		( sound1 ),					// CH1 Freq
+					.instru		( 0 )  					// Instruction Select
+					);
 
 
 

@@ -53,11 +53,12 @@ module	VGA_Controller(	//	Host Side
 						oVGA_V_SYNC,
 						oVGA_SYNC,
 						oVGA_BLANK,
-
+						//Coordinates
+						oH_Cont,
+						oV_Cont,
 						//	Control Signal
 						iCLK,
 						iRST_N,
-						iZOOM_MODE_SW
 							);
 
 //	Horizontal Parameter	( Pixel )
@@ -90,6 +91,8 @@ output	reg			oVGA_H_SYNC;
 output	reg			oVGA_V_SYNC;
 output	reg			oVGA_SYNC;
 output	reg			oVGA_BLANK;
+output	reg	[12:0] oH_Cont;
+output	reg	[12:0] oV_Cont;
 
 wire		[9:0]	mVGA_R;
 wire		[9:0]	mVGA_G;
@@ -102,7 +105,6 @@ wire				mVGA_BLANK;
 //	Control Signal
 input				iCLK;
 input				iRST_N;
-input 				iZOOM_MODE_SW;
 
 //	Internal Registers and Wires
 reg		[12:0]		H_Cont;
@@ -110,7 +112,7 @@ reg		[12:0]		V_Cont;
 
 wire	[12:0]		v_mask;
 
-assign v_mask = 13'd0 ;//iZOOM_MODE_SW ? 13'd0 : 13'd26;
+assign v_mask = 13'd0 ;
 
 ////////////////////////////////////////////////////////
 
@@ -133,7 +135,7 @@ always@(posedge iCLK or negedge iRST_N)
 			begin
 				oVGA_R <= 0;
 				oVGA_G <= 0;
-                oVGA_B <= 0;
+            oVGA_B <= 0;
 				oVGA_BLANK <= 0;
 				oVGA_SYNC <= 0;
 				oVGA_H_SYNC <= 0;
@@ -161,8 +163,12 @@ begin
 	else
 	begin
 		if(	H_Cont>=X_START-2 && H_Cont<X_START+H_SYNC_ACT-2 &&
-			V_Cont>=Y_START && V_Cont<Y_START+V_SYNC_ACT )
-		oRequest	<=	1;
+			V_Cont>=Y_START && V_Cont<Y_START+V_SYNC_ACT )begin
+      // if(H_Cont < H_SYNC_TOTAL || V_Cont < V_SYNC_TOTAL)
+        oRequest	<=	1;
+      // else
+        // oRequest	<=	0;        
+    end
 		else
 		oRequest	<=	0;
 	end
@@ -179,8 +185,10 @@ begin
 	else
 	begin
 		//	H_Sync Counter
-		if( H_Cont < H_SYNC_TOTAL )
+		if( H_Cont < H_SYNC_TOTAL )begin
 		H_Cont	<=	H_Cont+1;
+		oH_Cont  <= H_Cont;
+		end
 		else
 		H_Cont	<=	0;
 		//	H_Sync Generator
@@ -205,8 +213,10 @@ begin
 		if(H_Cont==0)
 		begin
 			//	V_Sync Counter
-			if( V_Cont < V_SYNC_TOTAL )
+			if( V_Cont < V_SYNC_TOTAL )begin
 			V_Cont	<=	V_Cont+1;
+			oV_Cont  <= V_Cont;
+			end
 			else
 			V_Cont	<=	0;
 			//	V_Sync Generator

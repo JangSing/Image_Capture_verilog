@@ -1,8 +1,8 @@
 --a_gray2bin carry_chain="MANUAL" carry_chain_length=48 device_family="Cyclone IV E" ignore_carry_buffers="OFF" WIDTH=9 bin gray
---VERSION_BEGIN 10.0 cbx_a_gray2bin 2010:06:27:21:21:57:SJ cbx_mgl 2010:06:27:21:25:48:SJ  VERSION_END
+--VERSION_BEGIN 13.1 cbx_a_gray2bin 2013:10:23:18:05:48:SJ cbx_mgl 2013:10:23:18:06:54:SJ  VERSION_END
 
 
--- Copyright (C) 1991-2010 Altera Corporation
+-- Copyright (C) 1991-2013 Altera Corporation
 --  Your use of Altera Corporation's design tools, logic functions 
 --  and other software and tools, and its AMPP partner logic 
 --  functions, and any output files from any of the foregoing 

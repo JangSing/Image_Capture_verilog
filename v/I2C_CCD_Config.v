@@ -77,7 +77,7 @@ reg	[3:0]	mSetup_ST;
 input 		iEXPOSURE_ADJ;
 input		iEXPOSURE_DEC_p;	
 
-parameter 	default_exposure 			= 16'h06c0;
+parameter 	default_exposure 			= 16'h0530;
 parameter 	exposure_change_value	 	= 16'd200;
 
 reg	[24:0]	combo_cnt;
@@ -155,7 +155,7 @@ assign i2c_reset = iRST_N & ~exposure_adj_reset & ~combo_pulse ;
 /////////////////////////////////////////////////////////////////////
 
 //	Clock Setting
-parameter	CLK_Freq	=	50000000;	//	50	MHz
+parameter	CLK_Freq	=	25000000;	//	50	MHz
 parameter	I2C_Freq	=	20000;		//	20	KHz
 //	LUT Data Number
 parameter	LUT_SIZE	=	25;

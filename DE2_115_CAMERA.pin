@@ -1,4 +1,4 @@
- -- Copyright (C) 1991-2010 Altera Corporation
+ -- Copyright (C) 1991-2013 Altera Corporation
  -- Your use of Altera Corporation's design tools, logic functions 
  -- and other software and tools, and its AMPP partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -63,7 +63,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 CHIP  "DE2_115_CAMERA"  ASSIGNED TO AN: EP4CE115F29C7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
