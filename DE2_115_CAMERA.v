@@ -546,17 +546,17 @@ assign bDISP_B =SW[2] ? bDATA:wDISP_B;
 
 
 //Frame count display
-SEG7_LUT_8 			u6	( .oSEG0(HEX5),
-                      .oSEG1(HEX6),
-                      .oSEG2(HEX7),
-                      .iDIG(cYSTART)
-						);
+// SEG7_LUT_8 			u6	( .oSEG0(HEX5),
+                      // .oSEG1(HEX6),
+                      // .oSEG2(HEX7),
+                      // .iDIG(cYSTART)
+						// );
 
-SEG7_LUT_8 			u7	( .oSEG0(HEX0),
-                      .oSEG1(HEX1),
-                      .oSEG2(HEX2),
-                      .iDIG(cXSTART)
-						);
+// SEG7_LUT_8 			u7	( .oSEG0(HEX0),
+                      // .oSEG1(HEX1),
+                      // .oSEG2(HEX2),
+                      // .iDIG(cXSTART)
+						// );
 
 
 sdram_pll 			u8	(
@@ -691,6 +691,7 @@ assign cYEND  =SW[3]?YEND  :0;
 IMAGE_CROP u14(
       .oDVAL(cDVAL),
       .oDATA(cDATA),
+      .oDarkCounter(DarkCounter),
       .iXSTART(cXSTART),
       .iXEND(cXEND),
       .iYSTART(cYSTART),
@@ -701,6 +702,19 @@ IMAGE_CROP u14(
       .iDVAL(Read)
 		);
 
+wire [15:0]DarkCounter;
+wire [15:0]LightCounter;
+
+reg [31:0]displayDIG;
+
+SEG7_LUT_8 			u7	( .oSEG0(HEX0),
+                      .oSEG1(HEX1),
+                      .oSEG2(HEX2),
+                      .oSEG3(HEX3),
+                      .iDIG(displayDIG)
+						);
+
+//VGA DISPLAY
 wire [9:0]cVGA_R;
 wire [9:0]cVGA_G;
 wire [9:0]cVGA_B;
@@ -712,8 +726,7 @@ assign cVGA_B = SW[4] ? cDATA:SD_DATA_B;
 wire	[12:0] oH_Cont;
 wire	[12:0] oV_Cont;
 
-//VGA DISPLAY
-VGA_Controller		u15	(	//	Host Side
+VGA_Controller		u16	(	//	Host Side
 							.oRequest(Read),
 							.iRed  (cVGA_R),
 							.iGreen(cVGA_G),
@@ -734,71 +747,70 @@ VGA_Controller		u15	(	//	Host Side
 							.iRST_N(DLY_RST_2),
 						);
 
+// always@(negedge KEY[3]) begin
+  // if(DarkCounter<50) begin
+    // sound_on<=1;
+    // displayDIG<=DarkCounter;
+  // end
+  // else begin
+    // sound_on<=0;
+    // displayDIG<=DarkCounter;
+  // end
+// end
 
 wire			            I2C_END;
 wire					      AUD_CTRL_CLK;
 
-//  TV DECODER ENABLE
+	
+//  TV DECODER ENABLE 
+	
 assign TD_RESET_N =1'b1;
 
 //  I2C
-	I2C_AV_Config 		u16	(	//	Host Side
+
+	I2C_AV_Config 		u17	(	//	Host Side
 								 .iCLK		( CLOCK_50),
 								 .iRST_N		( KEY[0] ),
 								 .o_I2C_END	( I2C_END ),
-								 //	I2C Side
+								   //	I2C Side
 								 .I2C_SCLK	( I2C_SCLK ),
-								 .I2C_SDAT	( I2C_SDAT )
+								 .I2C_SDAT	( I2C_SDAT )	
 								);
 
 
 //	AUDIO SOUND
+
 	assign	AUD_ADCLRCK	=	AUD_DACLRCK;
-	assign	AUD_XCK	   =	AUD_CTRL_CLK;
+	assign	AUD_XCK	   =	AUD_CTRL_CLK;			
 
 //  AUDIO PLL
-	VGA_Audio_PLL 	u17	(
+
+	VGA_Audio_PLL 	u18	(	
 							 .areset ( ~I2C_END ),
 							 .inclk0 ( TD_CLK27 ),
-							 .c1		( AUD_CTRL_CLK )
+							 .c1		( AUD_CTRL_CLK )	
 							);
-
-// Music Synthesizer Block //
-
-////////////Sound Select/////////////
-
-	wire [15:0]	sound1;
-	wire [15:0]	sound2;
-	wire 			sound_off1;
-	wire 			sound_off2;
-
-	wire [7:0]sound_code1 = 8'h33;
-
-	staff st1(
-			 // Key code-in //
-			 .scan_code1		( sound_code1 ),
-			 //Sound Output to Audio Generater//
-			 .sound1				( sound1 ),
-			 .sound_off1		( sound_off1 ),
-	      );
 
 // 2CH Audio Sound output -- Audio Generater //
 
-	adio_codec ad1	(
+	adio_codec ad1	(	
+	        
 					// AUDIO CODEC //
+		
 					.oAUD_BCK 	( AUD_BCLK ),
 					.oAUD_DATA	( AUD_DACDAT ),
-					.oAUD_LRCK	( AUD_DACLRCK ),
+					.oAUD_LRCK	( AUD_DACLRCK ),																
 					.iCLK_18_4	( AUD_CTRL_CLK ),
+			
 					// KEY //
-					.iRST_N	  	( KEY[0] ),
+		
+					.iRST_N	  	( KEY[0] ),							
 					.iSrc_Select( 2'b00 ),
+
 					// Sound Control //
-					.key1_on	( SW[5] & sound_off1 ),//CH1 ON / OFF
-					.sound1		( sound1 ),					// CH1 Freq
+					.key1_on		( ~SW[5] ),//CH1 ON / OFF								
+					.sound1		( 533 ),					// CH1 Freq
 					.instru		( 0 )  					// Instruction Select
 					);
-
-
 
 endmodule

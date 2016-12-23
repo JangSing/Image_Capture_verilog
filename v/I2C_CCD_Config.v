@@ -77,7 +77,7 @@ reg	[3:0]	mSetup_ST;
 input 		iEXPOSURE_ADJ;
 input		iEXPOSURE_DEC_p;	
 
-parameter 	default_exposure 			= 16'h0530;
+parameter 	default_exposure 			= 16'h05f8;//for D203 use 16'h05f8 for D210 use 16'h0400
 parameter 	exposure_change_value	 	= 16'd200;
 
 reg	[24:0]	combo_cnt;

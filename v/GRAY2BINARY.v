@@ -13,7 +13,7 @@ input       [11:0] iDATA;
 output reg  [11:0] oDATA;
 output reg	oDVAL;
 
-parameter threshold = 12'd1047;//increase to get more dark;
+parameter threshold = 12'd3747;//increase to get more dark;
 
 always@(posedge iCLK or negedge iRST)
 begin

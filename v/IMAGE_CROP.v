@@ -1,6 +1,8 @@
 module IMAGE_CROP(
         oDVAL,
         oDATA,
+        oDarkCounter,
+        oLightCounter,
         iXSTART,
         iXEND,
         iYSTART,
@@ -21,6 +23,9 @@ input    [15:0]	 iYSTART;
 input    [15:0]	 iYEND;
 output reg  [9:0] oDATA;
 output reg	oDVAL;
+output reg   [15:0] oDarkCounter;
+output reg   [15:0] oLightCounter;
+
 
 reg		[15:0]	X_Cont;
 reg		[15:0]	Y_Cont;
@@ -32,6 +37,8 @@ begin
     X_Cont <= 0;
     oDVAL  <= 0;
     oDATA  <= 0;
+    oDarkCounter <=0;
+    oLightCounter <=0;
   end
   else begin
     oDVAL <= iDVAL;
@@ -46,6 +53,10 @@ begin
           end
           else begin
             oDATA = iDATA;
+            if(oDATA!=0)
+              oLightCounter=oLightCounter+1;
+            else
+              oDarkCounter=oDarkCounter+1;
           end
           X_Cont = X_Cont + 1;	
         end
@@ -55,6 +66,8 @@ begin
         end
       end
       if(Y_Cont == 480) begin 
+        oDarkCounter  =0;
+        oLightCounter =0;
         X_Cont = 0;
         Y_Cont = 0;
       end

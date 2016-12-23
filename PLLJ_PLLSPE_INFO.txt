@@ -1,4 +1,9 @@
-PLL_Name	VGA_Audio_PLL:u17|altpll:altpll_component|altpll_dul2:auto_generated|pll1
+PLL_Name	sdram_pll:u8|altpll:altpll_component|altpll_f423:auto_generated|pll1
+PLLJITTER	35
+PLLSPEmax	84
+PLLSPEmin	-53
+
+PLL_Name	VGA_Audio_PLL:u18|altpll:altpll_component|altpll_dul2:auto_generated|pll1
 PLLJITTER	31
 PLLSPEmax	84
 PLLSPEmin	-53

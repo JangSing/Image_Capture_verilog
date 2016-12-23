@@ -64,7 +64,7 @@ begin
 	end
 end
 ////////////////////////////////////////////////////////////////////
-I2C_Controller 	u0	(	.CLOCK(mI2C_CTRL_CLK),		//	Controller Work Clock
+I2C_Controller_Audio 	u0	(	.CLOCK(mI2C_CTRL_CLK),		//	Controller Work Clock
 						.I2C_SCLK(I2C_SCLK),		//	I2C CLOCK
  	 	 	 	 	 	.I2C_SDAT(I2C_SDAT),		//	I2C DATA
 						.I2C_DATA(mI2C_DATA),		//	DATA:[SLAVE_ADDR,SUB_ADDR,DATA]
