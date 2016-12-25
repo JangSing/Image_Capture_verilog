@@ -747,23 +747,25 @@ VGA_Controller		u16	(	//	Host Side
 							.iRST_N(DLY_RST_2),
 						);
 
-// always@(negedge KEY[3]) begin
-  // if(DarkCounter<50) begin
-    // sound_on<=1;
-    // displayDIG<=DarkCounter;
-  // end
-  // else begin
-    // sound_on<=0;
-    // displayDIG<=DarkCounter;
-  // end
-// end
+reg sound_on;
+
+always@(negedge KEY[3]) begin
+  if(DarkCounter<16'h1000) begin
+    sound_on<=1;
+    displayDIG<=DarkCounter;
+  end
+  else begin
+    sound_on<=0;
+    displayDIG<=DarkCounter;
+  end
+end
 
 wire			            I2C_END;
 wire					      AUD_CTRL_CLK;
 
-	
-//  TV DECODER ENABLE 
-	
+
+//  TV DECODER ENABLE
+
 assign TD_RESET_N =1'b1;
 
 //  I2C
@@ -774,41 +776,41 @@ assign TD_RESET_N =1'b1;
 								 .o_I2C_END	( I2C_END ),
 								   //	I2C Side
 								 .I2C_SCLK	( I2C_SCLK ),
-								 .I2C_SDAT	( I2C_SDAT )	
+								 .I2C_SDAT	( I2C_SDAT )
 								);
 
 
 //	AUDIO SOUND
 
 	assign	AUD_ADCLRCK	=	AUD_DACLRCK;
-	assign	AUD_XCK	   =	AUD_CTRL_CLK;			
+	assign	AUD_XCK	   =	AUD_CTRL_CLK;
 
 //  AUDIO PLL
 
-	VGA_Audio_PLL 	u18	(	
+	VGA_Audio_PLL 	u18	(
 							 .areset ( ~I2C_END ),
 							 .inclk0 ( TD_CLK27 ),
-							 .c1		( AUD_CTRL_CLK )	
+							 .c1		( AUD_CTRL_CLK )
 							);
 
 // 2CH Audio Sound output -- Audio Generater //
 
-	adio_codec ad1	(	
-	        
+	adio_codec ad1	(
+
 					// AUDIO CODEC //
-		
+
 					.oAUD_BCK 	( AUD_BCLK ),
 					.oAUD_DATA	( AUD_DACDAT ),
-					.oAUD_LRCK	( AUD_DACLRCK ),																
+					.oAUD_LRCK	( AUD_DACLRCK ),
 					.iCLK_18_4	( AUD_CTRL_CLK ),
-			
+
 					// KEY //
-		
-					.iRST_N	  	( KEY[0] ),							
+
+					.iRST_N	  	( KEY[0] ),
 					.iSrc_Select( 2'b00 ),
 
 					// Sound Control //
-					.key1_on		( ~SW[5] ),//CH1 ON / OFF								
+					.key1_on		( sound_on ),//CH1 ON / OFF
 					.sound1		( 533 ),					// CH1 Freq
 					.instru		( 0 )  					// Instruction Select
 					);

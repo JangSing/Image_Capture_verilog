@@ -1368,20 +1368,6 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_global_assignment -name VERILOG_FILE Audio_Control/vga_time_generator.v
-set_global_assignment -name VERILOG_FILE Audio_Control/ps2_keyboard.v
-set_global_assignment -name VERILOG_FILE Audio_Control/ps2.v
-set_global_assignment -name VERILOG_FILE Audio_Control/LCD_TEST.v
-set_global_assignment -name VERILOG_FILE Audio_Control/LCD_Controller.v
-set_global_assignment -name VERILOG_FILE Audio_Control/demo_sound4.v
-set_global_assignment -name VERILOG_FILE Audio_Control/demo_sound3.v
-set_global_assignment -name VERILOG_FILE Audio_Control/demo_sound2.v
-set_global_assignment -name VERILOG_FILE Audio_Control/DeBUG_TEST.v
-set_global_assignment -name VERILOG_FILE Audio_Control/bar_white.v
-set_global_assignment -name VERILOG_FILE Audio_Control/bar_blank.v
-set_global_assignment -name VERILOG_FILE Audio_Control/bar_big.v
-set_global_assignment -name VERILOG_FILE Audio_Control/bar.v
-set_global_assignment -name VERILOG_FILE Audio_Control/AUDIO_DAC.v
 set_global_assignment -name VERILOG_FILE v/DARK_COUNT.v
 set_global_assignment -name VERILOG_FILE Audio_Control/VGA_Audio_PLL.v
 set_global_assignment -name VERILOG_FILE v/CROP_YEND.v
@@ -1423,9 +1409,7 @@ set_global_assignment -name VERILOG_FILE Audio_Control/wave_gen_square.v
 set_global_assignment -name VERILOG_FILE Audio_Control/wave_gen_sin.v
 set_global_assignment -name VERILOG_FILE Audio_Control/wave_gen_ramp.v
 set_global_assignment -name VERILOG_FILE Audio_Control/wave_gen_brass.v
-set_global_assignment -name VERILOG_FILE Audio_Control/staff.v
 set_global_assignment -name VERILOG_FILE Audio_Control/I2C_Controller_Audio.v
 set_global_assignment -name VERILOG_FILE Audio_Control/I2C_AV_Config.v
-set_global_assignment -name VERILOG_FILE Audio_Control/demo_sound1.v
 set_global_assignment -name VERILOG_FILE Audio_Control/adio_codec.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
