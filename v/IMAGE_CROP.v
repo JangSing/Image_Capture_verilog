@@ -29,6 +29,7 @@ output reg   [15:0] oLightCounter;
 
 reg		[15:0]	X_Cont;
 reg		[15:0]	Y_Cont;
+reg		[15:0]	DarkCounterTemp;
 
 always@(posedge iCLK or negedge iRST)
 begin
@@ -39,24 +40,28 @@ begin
     oDATA  <= 0;
     oDarkCounter <=0;
     oLightCounter <=0;
+    DarkCounterTemp <=0;
   end
-  else begin
+  else begin 
     oDVAL <= iDVAL;
     if(iDVAL)begin 
       if(Y_Cont<480)begin 
         if(X_Cont<640)begin
           if( X_Cont<160     || X_Cont>480   || 
-              Y_Cont<50      || Y_Cont>240   ||
+              Y_Cont<120      || Y_Cont>190   ||
               Y_Cont<iYSTART || Y_Cont>iYEND ||
               X_Cont<iXSTART || X_Cont>iXEND )begin
             oDATA = 0;
           end
           else begin
             oDATA = iDATA;
-            if(oDATA!=0)
+            if(oDATA!=0) begin
               oLightCounter=oLightCounter+1;
-            else
-              oDarkCounter=oDarkCounter+1;
+            end
+            else begin
+              DarkCounterTemp=DarkCounterTemp+1;
+              oDarkCounter=DarkCounterTemp;
+            end
           end
           X_Cont = X_Cont + 1;	
         end
@@ -66,7 +71,7 @@ begin
         end
       end
       if(Y_Cont == 480) begin 
-        oDarkCounter  =0;
+        DarkCounterTemp  =0;
         oLightCounter =0;
         X_Cont = 0;
         Y_Cont = 0;

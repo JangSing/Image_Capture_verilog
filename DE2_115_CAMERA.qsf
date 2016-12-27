@@ -1368,6 +1368,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name VERILOG_FILE v/Clock_Delay.v
 set_global_assignment -name VERILOG_FILE v/DARK_COUNT.v
 set_global_assignment -name VERILOG_FILE Audio_Control/VGA_Audio_PLL.v
 set_global_assignment -name VERILOG_FILE v/CROP_YEND.v

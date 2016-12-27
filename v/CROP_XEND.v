@@ -32,7 +32,7 @@ begin
     if(iDVAL)begin
       if(Y_Cont<480)begin
         if(X_Cont<640)begin
-          if( X_Cont>160 && X_Cont<480 && Y_Cont >50 && Y_Cont <240)begin
+          if( X_Cont>160 && X_Cont<480 && Y_Cont >120 && Y_Cont <190)begin
             if(iDATA==0)begin
               if(X_Cont>maxXEND)begin
                 maxXEND=X_Cont; 

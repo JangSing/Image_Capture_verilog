@@ -747,10 +747,18 @@ VGA_Controller		u16	(	//	Host Side
 							.iRST_N(DLY_RST_2),
 						);
 
+wire clock1sec;
+
+Clock_Delay			u19	(
+              .iCLK(CLOCK2_50),
+              .iRST(KEY[0]),
+              .oCLK_0(clock1sec),
+						);
+
 reg sound_on;
 
-always@(negedge KEY[3]) begin
-  if(DarkCounter<16'h1000) begin
+always@(posedge clock1sec) begin
+  if(DarkCounter<16'h0600 || DarkCounter>16'h4000) begin
     sound_on<=1;
     displayDIG<=DarkCounter;
   end
@@ -795,6 +803,10 @@ assign TD_RESET_N =1'b1;
 
 // 2CH Audio Sound output -- Audio Generater //
 
+wire AUD_KEY;
+
+assign AUD_KEY=SW[5]?sound_on:0;
+
 	adio_codec ad1	(
 
 					// AUDIO CODEC //
@@ -810,7 +822,7 @@ assign TD_RESET_N =1'b1;
 					.iSrc_Select( 2'b00 ),
 
 					// Sound Control //
-					.key1_on		( sound_on ),//CH1 ON / OFF
+					.key1_on		( AUD_KEY ),//CH1 ON / OFF
 					.sound1		( 533 ),					// CH1 Freq
 					.instru		( 0 )  					// Instruction Select
 					);
