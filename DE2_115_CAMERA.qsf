@@ -1368,8 +1368,8 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name VERILOG_FILE v/SOUND_SEL.v
 set_global_assignment -name VERILOG_FILE v/Clock_Delay.v
-set_global_assignment -name VERILOG_FILE v/DARK_COUNT.v
 set_global_assignment -name VERILOG_FILE Audio_Control/VGA_Audio_PLL.v
 set_global_assignment -name VERILOG_FILE v/CROP_YEND.v
 set_global_assignment -name VERILOG_FILE v/CROP_XEND.v
@@ -1390,12 +1390,9 @@ set_global_assignment -name VERILOG_FILE v/RAW2RGB.v
 set_global_assignment -name VERILOG_FILE v/Reset_Delay.v
 set_global_assignment -name VERILOG_FILE v/SEG7_LUT.v
 set_global_assignment -name VERILOG_FILE v/SEG7_LUT_8.v
-set_global_assignment -name VERILOG_FILE v/Stack_RAM.v
 set_global_assignment -name VERILOG_FILE v/VGA_Controller.v
 set_global_assignment -name SDC_FILE DE2_115_D5M_VGA.SDC
 set_global_assignment -name QIP_FILE v/sdram_pll.qip
-set_global_assignment -name SIGNALTAP_FILE stp1.stp
-set_global_assignment -name VERILOG_FILE v/touch_tcon.v
 set_global_assignment -name VERILOG_FILE v/VGA_Param.v
 set_global_assignment -name SOURCE_FILE VGA_Param.h
 set_global_assignment -name VERILOG_FILE v/Line_Buffer1.v

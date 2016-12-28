@@ -32,7 +32,7 @@ begin
 	else
    begin
       oDVAL <= iDVAL;
-      if(counter < 307199)begin
+      if(counter < (640*480))begin
 				oDATA   = (iRed+iGreen+iBlue)/3;
 				counter = counter + 1;
       end

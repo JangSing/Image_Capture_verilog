@@ -53,9 +53,6 @@ module	VGA_Controller(	//	Host Side
 						oVGA_V_SYNC,
 						oVGA_SYNC,
 						oVGA_BLANK,
-						//Coordinates
-						oH_Cont,
-						oV_Cont,
 						//	Control Signal
 						iCLK,
 						iRST_N,
@@ -91,8 +88,6 @@ output	reg			oVGA_H_SYNC;
 output	reg			oVGA_V_SYNC;
 output	reg			oVGA_SYNC;
 output	reg			oVGA_BLANK;
-output	reg	[12:0] oH_Cont;
-output	reg	[12:0] oV_Cont;
 
 wire		[9:0]	mVGA_R;
 wire		[9:0]	mVGA_G;
@@ -187,7 +182,6 @@ begin
 		//	H_Sync Counter
 		if( H_Cont < H_SYNC_TOTAL )begin
 		H_Cont	<=	H_Cont+1;
-		oH_Cont  <= H_Cont;
 		end
 		else
 		H_Cont	<=	0;
@@ -215,7 +209,6 @@ begin
 			//	V_Sync Counter
 			if( V_Cont < V_SYNC_TOTAL )begin
 			V_Cont	<=	V_Cont+1;
-			oV_Cont  <= V_Cont;
 			end
 			else
 			V_Cont	<=	0;

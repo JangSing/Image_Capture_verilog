@@ -1,5 +1,4 @@
 module CROP_XSTART(
-        oDVAL,
         oXSTART,
         iDATA,
         iCLK,
@@ -11,7 +10,6 @@ input       iDVAL;
 input       iCLK;
 input       iRST;
 input       [9:0] iDATA;
-output reg	oDVAL;
 output reg [15:0]oXSTART;
 
 reg		[15:0]	X_Cont;
@@ -24,13 +22,11 @@ begin
   if(!iRST)begin
     Y_Cont      <= 0;
     X_Cont      <= 0;
-    oDVAL       <= 0;
     oXSTART     <= 0;
     minXSTART   <= 16'd540;
     rowFirstVal <= 1;
   end
   else begin
-    oDVAL <= iDVAL;
     if(iDVAL)begin
       if(Y_Cont<480)begin
         if(X_Cont<640)begin
